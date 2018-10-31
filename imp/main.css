@@ -1,0 +1,45 @@
+html{
+    height:100%;
+}
+main{
+    height: 100%;
+}
+
+.navbar {
+    margin-bottom: 10px;
+    border-radius: 0;
+  }
+  
+
+.row.content {
+      height: 100%;
+      padding-left: 50px;
+        padding-right: 100px;
+        text-align: justify;
+}
+  
+
+  .sidenav {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f1f1f1;
+    text-align: right;
+    height: 100%;
+  } 
+  
+  .sidenav input{
+      margin: 10px;
+  }
+  
+
+  footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+  }
+
+  #vealogo{
+      height: inherit;
+      padding-bottom: 20px;
+  }
