@@ -1,45 +1,82 @@
-html{
-    height:100%;
-}
-main{
-    height: 100%;
+html {
+  height: 100%;
+ 
 }
 
-.navbar {
-    margin-bottom: 10px;
-    border-radius: 0;
-  }
+body {
+ height: 100%;
+  background-image: url("img/books.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+main {
+  background: white;
+  width: 70%;
+  margin-top: -30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 100%;
+}
+
+#heading{
+  font-family: 'PT Sans', sans-serif;
+}
+
+p{
+  font-family: 'PT Sans', sans-serif;
+}
+
+#navb {
+background-color: rgb(56, 55, 55);
+}
+
+#navLi{
+  font-family: 'PT Sans', sans-serif;
+
+}
+
+#navLi a{
+  color: rgb(5, 212, 136);
   
+}
+
+#navLi :hover{
+  background-color: rgb(5, 212, 136);
+  color: black;
+
+}
 
 .row.content {
-      height: 100%;
-      padding-left: 50px;
-        padding-right: 100px;
-        text-align: justify;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: justify;
 }
-  
 
-  .sidenav {
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #f1f1f1;
-    text-align: right;
-    height: 100%;
-  } 
-  
-  .sidenav input{
-      margin: 10px;
-  }
-  
+.sidenav {
+  background-color: #f1f1f1;
+  text-align: right;
+  height: 100%;
+}
 
-  footer {
-    background-color: #555;
-    color: white;
-    padding: 15px;
-  }
+.sidenav input {  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: auto;
+}
 
-  #vealogo{
-      height: inherit;
-      padding-bottom: 20px;
-  }
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+
+#vealogo {
+  height: inherit;
+  padding-bottom: 20px;
+}

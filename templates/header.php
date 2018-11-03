@@ -9,19 +9,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-</head>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  </head>
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div id="navb" class="container-fluid">
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <a class="navbar-brand" href="#"><img id="vealogo" src="https://moodle.venta.lv/moodle/pluginfile.php/1/core_admin/logo/0x150/1538140603/logo-min.png"></a>
     
-        <li class="active"><a href="#">Sākums</a></li>
-        <li><a href="#">Grāmatas</a></li>
-        <li><a href="#">Multivide</a></li>
-        <li><a href="#">Top Izdevumi</span></a></li>
+        <li id="navLi"><a href="index.php">SĀKUMS</a></li>
+        <li id="navLi"><a href="gramatas.php">GRĀMATAS</a></li>
+        <!--<li id="navLi"><a href="#">MULTIVIDE</a></li>-->
+        <li id="navLi"><a href="top.php">TOP IZDEVUMI</span></a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -44,3 +45,6 @@
     </div>
   </div>
 </nav>
+
+
+<main>
