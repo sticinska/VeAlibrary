@@ -10,12 +10,14 @@ require_once("templates/header.php");
         <input type="text" name="Vards" placeholder="Vards">
         <input type="text" name="Uzvards" placeholder="Uzvards">
 <?php
+echo "adsad";
 $sql = "SELECT Nosaukums FROM valsts;";
 $result = mysql_query($sql);
 
 echo "<select name='Valsts'>";
 while ($row = mysql_fetch_array($result)) {
-    echo "<option value='" . $row['Nosaukums'] . "'>" . $row['Nosaukums'] . "</option>";
+    $Nosaukums = mysql_real_escape_string($row);
+    echo "<option value='" . $Nosaukums . "'>" . $Nosaukums . "</option>";
 }
 echo "</select>";
 ?>

@@ -4,7 +4,7 @@ require_once("config.php");
 
 switch ($_POST['formName']) {
     case "autors":
-        echo "i is autors";
+        pievienoAutoru();
         break;
     case "bar":
         echo "i is bar";
@@ -34,7 +34,7 @@ function pievienoAutoru(){
     $Datums = $_POST['Datums'];
     
     
-    $sql = "INSERT INTO autors (vards, uzvards)
+    $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts, DzimsanasDatums)
     VALUES ('John', 'Doe')";
     
     if ($conn->query($sql) === TRUE) {
