@@ -12,6 +12,7 @@ require_once("templates/header.php");
         <input type="text" name="Uzvards" placeholder="Uzvards">
         <input type="text" name="Valsts" placeholder="Izcelsmes Valsts">
         <input type="date" name="Datums" >
+        <input type="hidden" name="formName" value="autors">
         <input type="submit" value="Submit">
     
     </form>

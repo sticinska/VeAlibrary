@@ -2,21 +2,46 @@
 
 require_once("config.php");
 
-$Vards = $_POST['Vards'];
-$Uzvards = $_POST['Uzvards'];
-$Valsts = $_POST['Valsts'];
-$Datums = $_POST['Datums'];
-
-
-$sql = "INSERT INTO autors (vards, uzvards)
-VALUES ('John', 'Doe')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+switch ($_POST['formName']) {
+    case "autors":
+        echo "i is autors";
+        break;
+    case "bar":
+        echo "i is bar";
+        break;
+    case "cake":
+        echo "i is cake";
+        break;
+    default:
+        echo "haha";
+        break;
 }
+
 
 mysqli_close($conn);
 
+
+
+
+
+
+
+
+function pievienoAutoru(){
+    $Vards = $_POST['Vards'];
+    $Uzvards = $_POST['Uzvards'];
+    $Valsts = $_POST['Valsts'];
+    $Datums = $_POST['Datums'];
+    
+    
+    $sql = "INSERT INTO autors (vards, uzvards)
+    VALUES ('John', 'Doe')";
+    
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+}
 ?>

@@ -35,9 +35,6 @@ foreach ($resultset as $result){
     }
 
 }
-
-
-
 ?>
 <hr>
 
