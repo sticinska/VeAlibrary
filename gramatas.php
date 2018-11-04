@@ -1,5 +1,5 @@
 <?php
-//require_once("config.php");
+require_once("config.php");
 require_once("templates/header.php");
 ?>
 
@@ -9,13 +9,14 @@ require_once("templates/header.php");
     
 
 <h1 id="heading">Seit ir visas kategorijas un apakskategorijas</h1>
-<p>here will be books
-    <br> 1 book
-    <br> 2 book
-    <br> 3 book
-    <br> 4 book
-    <br> 5 book
-</p>
+<?php
+
+$sql="SELECT DISTINCT Kategorija FROM kategorija;";
+echo "<!-- $sql -->";
+$sql_res = mysqli_query($d,$sql) or die("<h1>".mysqli_error()."</h1>");
+tabula($sql_res);
+
+?>
 <hr>
 
 <?php
