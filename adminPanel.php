@@ -10,7 +10,16 @@ require_once("templates/header.php");
         <form action="pievieno.php" method="POST">
         <input type="text" name="Vards" placeholder="Vards">
         <input type="text" name="Uzvards" placeholder="Uzvards">
-        <input type="text" name="Valsts" placeholder="Izcelsmes Valsts">
+        <?php
+        $sql = "SELECT Nosaukums FROM valsts";
+$result = mysql_query($sql);
+
+echo "<select name='Valsts'>";
+while ($row = mysql_fetch_array($result)) {
+    echo "<option value='" . $row['Nosaukums'] . "'>" . $row['Nosaukums'] . "</option>";
+}
+echo "</select>";
+?>
         <input type="date" name="Datums" >
         <input type="hidden" name="formName" value="autors">
         <input type="submit" value="Submit">
