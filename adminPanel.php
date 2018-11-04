@@ -11,7 +11,7 @@ require_once("templates/header.php");
         <input type="text" name="Vards" placeholder="Vards">
         <input type="text" name="Uzvards" placeholder="Uzvards">
         <?php
-        $sql = "SELECT Nosaukums FROM valsts";
+        $sql = "SELECT Nosaukums FROM valsts;";
 $result = mysql_query($sql);
 
 echo "<select name='Valsts'>";
