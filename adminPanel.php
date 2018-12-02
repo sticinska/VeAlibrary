@@ -10,8 +10,9 @@ require_once("templates/header.php");
         <input type="text" name="Vards" placeholder="Vards">
         <input type="text" name="Uzvards" placeholder="Uzvards">
 <?php
-echo "adsad";
+
 $sql = "SELECT Nosaukums FROM valsts;";
+echo "adsad";
 $result = mysql_query($sql);
 
 echo "<select name='Valsts'>";
