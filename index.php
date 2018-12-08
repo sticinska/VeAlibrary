@@ -10,11 +10,14 @@ require_once("templates/header.php");
 
 <?php
 
-$sql="SELECT Nosaukums FROM gramata;";
-echo "<!-- $sql -->";
-$sql_res = mysqli_query($d,$sql) or die("<h1>".mysqli_error()."</h1>");
-tabula($sql_res);
-echo "hello";
+
+$sql="SELECT Nosaukums, CONCAT (autors.Vards, ' ' , autors.Uzvards) as Autors , autors.ID as AID, gramata.ID as GID FROM gramata FULL JOIN
+   gramatasAutori ON ID = gramatasAutori.GramataID LEFT JOIN autors ON autors.ID = gramatasAutori.AutorsID;";
+   $sql_res = mysqli_query($conn,$sql) or die("<h1>no</h1>");
+   while ($row = mysqli_fetch_assoc($sql_res)) {
+     echo 'please';
+     echo '<a href="autors.php?id=' .$row["AID"]. '">' .$row["Autors"]. '</a href="gramata.php?id='.$row["GID"].'><a>'.$row["Nosaukums"].'</a><br>';
+   }
+
 include_once("templates/footer.php");
 ?>
-<div><h1>hello</h1></div>

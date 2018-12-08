@@ -12,10 +12,10 @@ require_once("templates/header.php");
 <?php
 
 $query="SELECT * FROM kategorija WHERE Virskategorija = Null;";
-$results = mysql_query($query);
+$results = mysqli_query($conn,$query);
 
 $resultset = array();
-while ($row = mysql_fetch_array($results)) {
+while ($row = mysqli_fetch_array($results)) {
   $resultset[] = $row;
 }
 
