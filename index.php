@@ -11,7 +11,7 @@ require_once("templates/header.php");
 <?php
 
 
-$sql="SELECT Nosaukums, CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors  FROM gramata FULL JOIN
+$sql="SELECT Nosaukums, CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors, ID as GID  FROM gramata FULL JOIN
 gramatasAutori ON ID = gramatasAutori.GramataID LEFT JOIN autors ON autors.ID = gramatasAutori.AutorsID;";
    $sql_res = mysqli_query($conn,$sql) or die("<h1>no</h1>");
    while ($row = mysqli_fetch_assoc($sql_res)) {
