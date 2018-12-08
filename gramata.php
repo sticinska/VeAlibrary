@@ -9,7 +9,7 @@ if ( isset( $_GET[ "id" ] ) )
       gramatasAutori ON GramataaID = gramatasAutori.GramataID LEFT JOIN autors ON autors.ID = gramatasAutori.AutorsID WHERE GramataaID = ".$bookID.";";
    $sql_res = mysql_query($conn,$sql) or die("<h1>".mysqli_error()."</h1>");
    while ($row = mysqli_fetch_assoc($sql_res)) {
-     echo $row;
+     echo '<div>' .$row["Autors"]. '</div>';
    }
 
   
