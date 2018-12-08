@@ -12,7 +12,7 @@ if ( isset( $_GET[ "id" ] ) )
    $stmt->execute();
    $sql_res = $stmt->get_result();
    while ($row = mysqli_fetch_assoc($sql_res)) {
-     echo '<div>' .$row["Autors"]. '</div>';
+     echo '<div><h3>' .$row["Autors"]. '</h3><br><h3>"'.$row["Nosaukums"].'"</h3></div>';
    }
 
   
