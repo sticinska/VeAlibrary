@@ -13,16 +13,25 @@ require_once("templates/header.php");
    mysqli_stmt_bind_param($stmt, "s", $skaits);
    $stmt->execute();
    $sql_res = $stmt->get_result();
-   $row = mysqli_fetch_array($sql_res);
 
    while ($row = mysqli_fetch_assoc($sql_res)) {
      $gramatasID = $row["GID"];
      $gramata = $row["Nosaukums"];
+
+     $sql="call getGramatasAutori(?)";
+     $stmt = mysqli_prepare($conn, $sql);
+     mysqli_stmt_bind_param($stmt, "s", $skaits);
+     $stmt->execute();
+     $res = $stmt->get_result();
+
      echo '<div class="media attribution">';
      echo '<li class="media">';
      echo '<img class="mr-3" src="imp/img/bookF/tmp.jpg" alt="Generic placeholder image">';
      echo '<div class="media-body">';
-     //echo '<a href="autors.php?id=' .$row["AID"]. '"><h5 class="mt-0 mb-1">'.$autors.' </a>';
+     while($autorsRow = mysqli_fetch_assoc($res)){
+        echo '<a href="autors.php?id=' .$autorsRow["AID"]. '"><h5 class="mt-0 mb-1">'.$autorsRow["Autors"].' </a>';
+     }
+     
      echo '<a href="gramata.php?id='.$row["GID"].'">"'.$gramata.'"</h5></a>';
      echo 'default graamatas apraksts</div></li></div>';
     }
