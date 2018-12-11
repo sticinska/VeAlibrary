@@ -21,7 +21,7 @@ require_once("templates/header.php");
      $sqln="call getGramatasAutori(?);"
      $stmtn = mysqli_prepare($conn, $sqln);
      mysqli_stmt_bind_param($stmtn, "s", $gramatasID);
-     $stmtn->execute();
+     $stmtn->execute() or die(mysql_error()."update failed");; 
      $res = $stmtn->get_result();
 
      echo '<div class="media attribution">';
