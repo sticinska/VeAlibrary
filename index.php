@@ -3,7 +3,7 @@ require_once("templates/header.php");
 ?>
     <div> 
     <h1 id="heading">Jaunākās grāmatas biblotēkā</h1>
-    <ul class="list-unstyled">
+    <ul class="list-unstyled" style="width=auto">
 
 <?php
 
@@ -19,7 +19,7 @@ $sql="SELECT Nosaukums, CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors, Gr
      $autors = $row["Autors"];
      $gramata = $row["Nosaukums"];
      echo '<li class="media">';
-     echo '<img class="mr-3" src="..." alt="Generic placeholder image">';
+     echo '<img class="mr-3" src="imp/img/bookF/tmp.jpg" alt="Generic placeholder image">';
      echo '<div class="media-body">';
      echo '<a href="autors.php?id=' .$row["AID"]. '"><h5 class="mt-0 mb-1">'.$autors.' </a>';
      echo '<a href="gramata.php?id='.$row["GID"].'">"'.$gramata.'"</h5></a>';
