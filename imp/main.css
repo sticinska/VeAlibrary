@@ -4,7 +4,7 @@ html {
 }
 
 body {
- height: 100%;
+ height: auto;
   background-image: url("img/books.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -19,7 +19,7 @@ main {
   padding-top: 50px;
   padding-left: 5%;
   padding-right: 5%;
-  height: 100%;
+  height: auto;
 }
 
 #heading{
