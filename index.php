@@ -1,12 +1,9 @@
 <?php
 require_once("templates/header.php");
 ?>
-
-
-
     <div> 
     <h1 id="heading">Jaunākās grāmatas biblotēkā</h1>
-    
+    <ul class="list-unstyled">
 
 <?php
 
@@ -15,12 +12,22 @@ $sql="SELECT Nosaukums, CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors, Gr
    $sql_res = mysqli_query($conn,$sql) or die("<h1>no</h1>");
    echo "<center><table class=\"schedule\">";
    $first = true;
-    echo "</table></center>";
-   while ($row = mysqli_fetch_assoc($sql_res)) {
-    
-     echo '<tr><td><a href="autors.php?id=' .$row["AID"]. '">' .$row["Autors"]. '</a></td> ';
-     echo '<td><a href="gramata.php?id='.$row["GID"].'">'.$row["Nosaukums"].'</a></td></tr><br>';
-   }
 
+   while ($row = mysqli_fetch_assoc($sql_res)) {
+     $autorsID = $row["AID"];
+     $gramatasID = $row["GID"];
+     $autors = $row["Autors"];
+     $gramata = $row["Nosaukums"];
+     echo '<li class="media">';
+     echo '<img class="mr-3" src="..." alt="Generic placeholder image">';
+     echo '<div class="media-body">';
+     echo '<a href="autors.php?id=' .$row["AID"]. '"><h5 class="mt-0 mb-1">'.$autors.' </a>';
+     echo '<a href="gramata.php?id='.$row["GID"].'">"'.$gramata.'"</h5></a>';
+     echo 'default graamatas apraksts</div></li>';
+    }
+
+?>
+    
+<?php 
 include_once("templates/footer.php");
 ?>
