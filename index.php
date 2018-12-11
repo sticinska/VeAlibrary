@@ -18,12 +18,13 @@ $sql="SELECT Nosaukums, CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors, Gr
      $gramatasID = $row["GID"];
      $autors = $row["Autors"];
      $gramata = $row["Nosaukums"];
+     echo '<div class="media attribution">';
      echo '<li class="media">';
      echo '<img class="mr-3" src="imp/img/bookF/tmp.jpg" alt="Generic placeholder image">';
      echo '<div class="media-body">';
      echo '<a href="autors.php?id=' .$row["AID"]. '"><h5 class="mt-0 mb-1">'.$autors.' </a>';
      echo '<a href="gramata.php?id='.$row["GID"].'">"'.$gramata.'"</h5></a>';
-     echo 'default graamatas apraksts</div></li>';
+     echo 'default graamatas apraksts</div></li></div>';
     }
 
 ?>
