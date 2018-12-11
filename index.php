@@ -18,8 +18,8 @@ $sql="SELECT Nosaukums, CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors, Gr
     echo "</table></center>";
    while ($row = mysqli_fetch_assoc($sql_res)) {
     
-     echo '<tr><a href="autors.php?id=' .$row["AID"]. '">' .$row["Autors"]. '</a> ';
-     echo '<a href="gramata.php?id='.$row["GID"].'">'.$row["Nosaukums"].'</a></tr><br>';
+     echo '<tr><td><a href="autors.php?id=' .$row["AID"]. '">' .$row["Autors"]. '</a></td> ';
+     echo '<td><a href="gramata.php?id='.$row["GID"].'">'.$row["Nosaukums"].'</a></td></tr><br>';
    }
 
 include_once("templates/footer.php");
