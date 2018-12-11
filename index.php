@@ -20,7 +20,7 @@ require_once("templates/header.php");
 
      $sql="call getGramatasAutori(?)";
      $stmt = mysqli_prepare($conn, $sql);
-     mysqli_stmt_bind_param($stmt, "s", $skaits);
+     mysqli_stmt_bind_param($stmt, "s", $gramatasID);
      $stmt->execute();
      $res = $stmt->get_result();
 
