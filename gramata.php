@@ -3,7 +3,7 @@
 require_once("templates/header.php");
 if ( isset( $_GET[ "id" ] ) )
    $bookID = $_GET["id"];
-
+   echo $bookID;
    $sql="SELECT Nosaukums, eksemplars.IrPieejama, Count(*) as Skaits FROM gramata 
          LEFT JOIN eksemplars 
          ON eksemplars.Gramata = GramataaID 
@@ -14,8 +14,9 @@ if ( isset( $_GET[ "id" ] ) )
    mysqli_stmt_bind_param($stmt, "s", $bookID);
    $stmt->execute();
    $sql_res = $stmt->get_result();
-   
-   echo '<div><h3>'.$row["Nosaukums"].'"</h3></div>';
+   $row = mysqli_fetch_array($sql_res);
+   echo '<div><h3>"'.$row["Nosaukums"].'"</h3></div>';
+
    
 
   
