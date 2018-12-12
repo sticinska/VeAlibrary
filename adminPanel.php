@@ -1,5 +1,16 @@
 <?php
 require_once("templates/header.php");
+
+
+$sql = "SELECT Nosaukums FROM valsts;";
+$result = mysql_query($sql);
+
+echo "";
+while ($row = mysql_fetch_array($result)) {
+    $Nosaukums = mysql_real_escape_string($row["Nosaukums"]);
+    echo $Nosaukums;
+}
+
 ?>
 
 <div style="color:red">
@@ -9,17 +20,13 @@ require_once("templates/header.php");
         <form action="pievieno.php" method="POST">
         <input type="text" name="Vards" placeholder="Vards">
         <input type="text" name="Uzvards" placeholder="Uzvards">
+        <select name='Valsts'>
+
+
+        </select>
+
 <?php
 
-$sql = "SELECT Nosaukums FROM valsts;";
-$result = mysql_query($sql);
-
-echo "<select name='Valsts'>";
-while ($row = mysql_fetch_array($result)) {
-    $Nosaukums = mysql_real_escape_string($row["Nosaukums"]);
-    echo "<option value='" . $Nosaukums. "'>" .$Nosaukums. "</option>";
-}
-echo "</select>";
 ?>
         <input type="date" name="Datums" >
         <input type="hidden" name="formName" value="autors">
