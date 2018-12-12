@@ -81,10 +81,14 @@ footer {
   padding-bottom: 20px;
 }
 
+.bookimg{
+max-width: 100px;
+max-height: 100px;
+}
 
 /* ====== media ====== */
 .media {margin:10px;}
 .media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
-.media .img {float:left; margin-right: 10px;}
+.media .img {float:left; margin-right: 10px; max-width:100px;}
 .media .img img{display:block; max-width: 100px;}
 .media .imgExt{float:right; margin-left: 10px;}
