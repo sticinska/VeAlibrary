@@ -33,7 +33,7 @@ function pievienoAutoru(){
     $Valsts = mysqli_real_escape_string($_POST['Valsts']);
 
     $sql = "INSERT INTO autors ('Vards', 'Uzvards, 'IzcelsmesValsts')
-            VALUES ('$Vards','$Uzvards','$Valsts')";
+            VALUES ('test','test','1')";
     
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
