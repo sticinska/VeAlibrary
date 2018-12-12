@@ -18,33 +18,33 @@ $sql="SELECT Nosaukums FROM valsts;";
         <h3>Pievieno Gramatu</h3><br>
         <form action="pievienoGramatu.php" method="POST">
 <div>
-        <label for="nosaukums">Nosaukums</label>
+        <label for="nosaukums">Nosaukums</label><br>
             <input type="text" id="vards" name="Nosaukums" placeholder="Nosaukums" required>
             </div>
 
-        <div><label for="autors">Grāmatas Autors</label>
+        <div><label for="autors">Grāmatas Autors</label><br>
             <select id="autors" name='Autors' multiple>
                 <option value="viens">autors viens</option>
                 <option value="divi">autors divi</option>
                 <option value="tris">autors tris</option>
             </select></div>
-            <div><label for="ISBN">ISBN kods</label>
+            <div><label for="ISBN">ISBN kods</label><br>
             <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods"></div>
-            <div><label for="valoda">Valoda</label>
+            <div><label for="valoda">Valoda</label><br>
             <datalist id="valoda" name='Valoda' required>
                
 </datalist></div>
-            <div><label for="originalvaloda">Oriģinālvaloda</label>
+            <div><label for="originalvaloda">Oriģinālvaloda</label><br>
             <select id="originalvaloda" name='Originalvaloda' required>
                 <option value="Latvian">Latvian</option>
                 <option value="Russian">Russian</option>
                 <option value="English">English</option>
             </select></div>
-            <div><label for="apjoms">Lappušu skaits</label>
+            <div><label for="apjoms">Lappušu skaits</label><br>
             <input type="text" id="apjoms" name="Apjoms" placeholder="Lappušu skaits"></div>
-            <div><label for="izdevnieciba">Izdevnieciba</label>
+            <div><label for="izdevnieciba">Izdevnieciba</label><br>
             <input type="text" id="izdevnieciba" name="Izdevnieciba" placeholder="Izdevnieciba"></div>
-            <div><label for="izdevumaGads">Izdevuma gads</label>
+            <div><label for="izdevumaGads">Izdevuma gads</label><br>
             <input type="number" id="izdevumaGads" name="IzdevumaGads" min="1000" max="2018" value="2018"></div>
 
 
@@ -56,11 +56,11 @@ $sql="SELECT Nosaukums FROM valsts;";
 <div>
         <h3>Pievieno Autoru</h3><br>
         <form action="pievienoAutoru.php" method="POST">
-        <div><label for="vards">Vārds</label>
+        <div><label for="vards">Vārds</label><br>
             <input type="text" id="vards" name="Vards" placeholder="Vards" required></div>
-            <div><label for="uzvards">Uzvārds</label>
+            <div><label for="uzvards">Uzvārds</label><br>
             <input type="text" id="uzvards" name="Uzvards" placeholder="Uzvards"></div>
-            <div><label for="valsts">Izcelsmes valsts</label>
+            <div><label for="valsts">Izcelsmes valsts</label><br>
             <datalist id="valoda" name='Valoda' required>
                <?php 
                while ($row = mysqli_fetch_assoc($Valstis)) {
