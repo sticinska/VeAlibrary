@@ -14,57 +14,59 @@ while ($row = mysql_fetch_array($result)) {
     
         <h3>Pievieno Gramatu</h3><br>
         <form action="pievieno.php" method="POST">
-
+<div>
         <label for="nosaukums">Nosaukums</label>
             <input type="text" id="vards" name="Nosaukums" placeholder="Nosaukums">
-        <label for="autors">Grāmatas Autors</label>
+            </div>
+
+        <div><label for="autors">Grāmatas Autors</label>
             <select id="autors" name='Autors' multiple>
                 <option value="viens">autors viens</option>
                 <option value="divi">autors divi</option>
                 <option value="tris">autors tris</option>
-            </select>
-        <label for="ISBN">ISBN kods</label>
-            <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods">
-        <label for="valoda">Valoda</label>
+            </select></div>
+            <div><label for="ISBN">ISBN kods</label>
+            <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods"></div>
+            <div><label for="valoda">Valoda</label>
             <select id="valoda" name='Valoda'>
                 <option value="Latvian">Latvian</option>
                 <option value="Russian">Russian</option>
                 <option value="English">English</option>
-            </select>
-        <label for="originalvaloda">Oriģinālvaloda</label>
+            </select></div>
+            <div><label for="originalvaloda">Oriģinālvaloda</label>
             <select id="originalvaloda" name='Originalvaloda'>
                 <option value="Latvian">Latvian</option>
                 <option value="Russian">Russian</option>
                 <option value="English">English</option>
-            </select>
-        <label for="apjoms">Lappušu skaits</label>
-            <input type="text" id="apjoms" name="apjoms" placeholder="Lappušu skaits">
-        <label for="izdevnieciba">Izdevnieciba</label>
-            <input type="text" id="izdevnieciba" name="Izdevnieciba" placeholder="Izdevnieciba">
-        <label for="izdevumaGads">Izdevuma gads</label>
-            <input type="number" id="izdevumaGads" name="IzdevumaGads" placeholder="2018">
+            </select></div>
+            <div><label for="apjoms">Lappušu skaits</label>
+            <input type="text" id="apjoms" name="apjoms" placeholder="Lappušu skaits"></div>
+            <div><label for="izdevnieciba">Izdevnieciba</label>
+            <input type="text" id="izdevnieciba" name="Izdevnieciba" placeholder="Izdevnieciba"></div>
+            <div><label for="izdevumaGads">Izdevuma gads</label>
+            <input type="number" id="izdevumaGads" name="IzdevumaGads" placeholder="2018"></div>
 
 
             <input type="hidden" name="formName" value="gramata">
-            <input type="submit" value="Submit">
+            <div><input type="submit" value="Submit"></div>
         </form>
         
 
 <div>
         <h3>Pievieno Autoru</h3><br>
         <form action="pievieno.php" method="POST">
-            <label for="vards">Vārds</label>
-            <input type="text" id="vards" name="Vards" placeholder="Vards">
-            <label for="uzvards">Uzvārds</label>
-            <input type="text" id="uzvards" name="Uzvards" placeholder="Uzvards">
-            <label for="valsts">Izcelsmes valsts</label>
+        <div><label for="vards">Vārds</label>
+            <input type="text" id="vards" name="Vards" placeholder="Vards"></div>
+            <div><label for="uzvards">Uzvārds</label>
+            <input type="text" id="uzvards" name="Uzvards" placeholder="Uzvards"></div>
+            <div><label for="valsts">Izcelsmes valsts</label>
             <select id="valsts" name='Valsts'>
                 <option value="Latvia">Latvia</option>
                 <option value="Russia">Russia</option>
                 <option value="United Kingdom">United Kingdom</option>
-            </select>
-            <label for="datums">Dzimšanas datums</label>
-            <input id="datums"  type="date" name="Datums" >
+            </select></div>
+            <div><label for="datums">Dzimšanas datums</label>
+            <input id="datums"  type="date" name="Datums" ></div>
             <input type="hidden" name="formName" value="autors">
             <input type="submit" value="Submit">
         </form>
