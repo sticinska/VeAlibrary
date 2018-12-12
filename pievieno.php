@@ -34,7 +34,7 @@ mysqli_close($conn);
 
 
 function pievienoAutoru(){
-    echo 'hello';
+    
     
     try{
         // Create prepared statement
@@ -45,7 +45,7 @@ function pievienoAutoru(){
         $stmt->bindParam(':vards', $_POST['Vards']);
         $stmt->bindParam(':uzv',$_POST['Uzvards']);
         $stmt->bindParam(':valsts',$_POST['Valsts']);
-        
+        echo 'hello';
         // Execute the prepared statement
         $stmt->execute();
         echo "Records inserted successfully.";
