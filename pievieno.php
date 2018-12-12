@@ -37,8 +37,7 @@ function pievienoAutoru(){
     echo $Uzvards;
     echo $Valsts;
 
-    $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts)
-            VALUES ('test','test',1)";
+    $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) VALUES ('$Vards','$Uzvards','$Valsts')";
     
     if(mysqli_query($conn, $sql)){
         echo "Records added successfully.";
