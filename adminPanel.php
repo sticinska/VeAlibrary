@@ -16,10 +16,15 @@ $sql="SELECT * FROM valsts;";
     array_push($Valodas,$val);
    }
 
-   $sql="SELECT ID, CONCAT(Vards,' ',  Uzvards) as Autors FROM autors;";
+   $sql="SELECT CONCAT(Vards,' ',  Uzvards) as Autors FROM autors;";
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
    $Autori = $stmt->get_result();
+
+   $sql="SELECT * FROM izdevnieciba;";
+   $stmt = mysqli_prepare($conn, $sql);
+   $stmt->execute();
+   $Izdevniecibas = $stmt->get_result();
 
 
 
@@ -38,7 +43,7 @@ $sql="SELECT * FROM valsts;";
             <datalist id="autors" name='Autors'>
             <?php 
                while ($row = mysqli_fetch_assoc($Autori)) {
-                    echo '<option value="'.$row["ID"].'">'.$row["Autors"].'</option>';
+                    echo '<option value="'.$row["Autors"].'">'.$row["Autors"].'</option>';
                 }
                ?>
             </datalist></div>
@@ -61,9 +66,15 @@ $sql="SELECT * FROM valsts;";
                ?>
             </select></div>
             <div><label for="apjoms">Lappušu skaits</label><br>
-            <input type="text" id="apjoms" name="Apjoms" placeholder="Lappušu skaits"></div>
+            <input type="text" id="apjoms" min="1" name="Apjoms" placeholder="Lappušu skaits"></div>
             <div><label for="izdevnieciba">Izdevnieciba</label><br>
-            <input type="text" id="izdevnieciba" name="Izdevnieciba" placeholder="Izdevnieciba"></div>
+            <select id="izdevnieciba" name='Izdevnieciba'>
+            <?php 
+               while ($row = mysqli_fetch_assoc($Izdevniecibas)) {
+                    echo '<option value="'.$row["ID"].'">'.$row["Nosaukums"].'</option>';
+                }
+               ?>
+            </select></div>
             <div><label for="izdevumaGads">Izdevuma gads</label><br>
             <input type="number" id="izdevumaGads" name="IzdevumaGads" min="1000" max="2018" value="2018"></div>
 
