@@ -64,7 +64,7 @@ $sql="SELECT Nosaukums FROM valsts;";
             <select id="valoda" name='Valoda' required>
                <?php 
                while ($row = mysqli_fetch_assoc($Valstis)) {
-                    echo '<option value="'.$row["Nosaukums"].'">';
+                    echo '<option value="'.$row["Nosaukums"].'">'.$row["Nosaukums"].'</option>';
                 }
                ?>
             </select></div>
