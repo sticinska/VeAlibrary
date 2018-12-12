@@ -11,9 +11,10 @@ $sql="SELECT * FROM valsts;";
    $stmt->execute();
    $Valodas = array();
    $res = $stmt->get_result();
-   //while ($row = mysqli_fetch_assoc($res)) {
-    //   array_push($Valodas,($row["id"], $row["Valoda"]));
-   // }
+   while ($row = mysqli_fetch_assoc($res)) {
+    $val = array($row["id"], $row["Valoda"]);    
+    array_push($Valodas,$val);
+   }
 
 ?>
 
