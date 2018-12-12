@@ -54,7 +54,7 @@ while ($row = mysql_fetch_array($result)) {
 
 <div>
         <h3>Pievieno Autoru</h3><br>
-        <form action="pievienoAutoru.php" method="POST">
+        <form action="pievieno.php" method="POST">
         <div><label for="vards">Vārds</label>
             <input type="text" id="vards" name="Vards" placeholder="Vards" required></div>
             <div><label for="uzvards">Uzvārds</label>
