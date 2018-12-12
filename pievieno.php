@@ -1,6 +1,12 @@
 <?php
 
-require_once("config.php");
+try{
+    $pdo = new PDO("mysql:host=localhost;dbname=demo", "root", "");
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e){
+    die("ERROR: Could not connect. " . $e->getMessage());
+}
 
 switch ($_POST['formName']) {
     case "autors":
@@ -29,21 +35,25 @@ mysqli_close($conn);
 
 function pievienoAutoru(){
     echo 'hello';
-    $Vards = $_POST['Vards'];
-    $Uzvards = $_POST['Uzvards'];
-    $Valsts = $_POST['Valsts'];
-
-    echo $Vards;
-    echo $Uzvards;
-    echo $Valsts;
-
-    $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) VALUES ('$Vards','$Uzvards','$Valsts')";
     
-    if(mysqli_query($conn, $sql)){
-        echo "Records added successfully.";
-    } else{
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+    try{
+        // Create prepared statement
+        $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) VALUES (:vards, :uzv, :valsts)";
+        $stmt = $pdo->prepare($sql);
+        
+        // Bind parameters to statement
+        $stmt->bindParam(':vards', $_POST['Vards']);
+        $stmt->bindParam(':uzv',$_POST['Uzvards']);
+        $stmt->bindParam(':valsts',$_POST['Valsts']);
+        
+        // Execute the prepared statement
+        $stmt->execute();
+        echo "Records inserted successfully.";
+    } catch(PDOException $e){
+        die("ERROR: Could not able to execute $sql. " . $e->getMessage());
     }
-    
+     
+    // Close connection
+    unset($pdo);
 }
 ?>
