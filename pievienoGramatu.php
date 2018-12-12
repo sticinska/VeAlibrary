@@ -8,7 +8,7 @@ $stmt->bind_param('sisiiii', $nos, $apj, $isbn, $izd, $izdg, $val, $oval);
 $nos = $_POST["Nosaukums"];
 $apj = $_POST["Apjoms"];
 $isbn = $_POST['ISBN'];
-$izd = $_POST['Izdevums'];
+$izd = $_POST['Izdevnieciba'];
 $izdg = $_POST['IzdevumaGads'];
 $val = $_POST['Valoda'];
 $oval = $_POST['Originalvaloda'];
