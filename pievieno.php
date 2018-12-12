@@ -1,7 +1,7 @@
 <?php
 
 try{
-    $pdo = new PDO("mysql:host=localhost;dbname=demo", "root", "");
+    $pdo = new PDO("mysql:host=localhost;dbname=library", "dbteh", "DBteh-2018");
     // Set the PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e){
