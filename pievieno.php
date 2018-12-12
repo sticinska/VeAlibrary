@@ -33,7 +33,7 @@ function pievienoAutoru(){
     $Uzvards = $_POST['Uzvards'];
     $Valsts = $_POST['Valsts'];
 
-    $sql = "INSERT INTO autors ('Vards', 'Uzvards, 'IzcelsmesValsts')
+    $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts)
             VALUES ('test','test',1)";
     
     if ($conn->query($sql) === TRUE) {
