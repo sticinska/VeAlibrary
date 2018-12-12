@@ -64,11 +64,10 @@ $sql="SELECT Nosaukums FROM valsts;";
             <datalist id="valoda" name='Valoda' required>
                <?php 
                while ($row = mysqli_fetch_assoc($Valstis)) {
-
-                echo '<option value="'.$row["Nosaukums"].'">';
+                    echo '<option value="'.$row["Nosaukums"].'">';
                 }
                ?>
-</datalist></div>
+            </datalist></div>
             
             <input type="hidden" name="formName" value="autors">
             <input type="submit" value="Submit">
