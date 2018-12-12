@@ -6,10 +6,10 @@ $sql="SELECT Nosaukums FROM valsts;";
    $stmt = mysqli_prepare($conn, $sql);
    mysqli_stmt_bind_param($stmt, "s", $skaits);
    $stmt->execute();
-   $sql_res = $stmt->get_result();
+   $Valstis = $stmt->get_result();
 
    while ($row = mysqli_fetch_assoc($sql_res)) {
-       echo $row;
+       echo $row["Nosaukums"];
    }
 
 ?>
@@ -31,11 +31,9 @@ $sql="SELECT Nosaukums FROM valsts;";
             <div><label for="ISBN">ISBN kods</label>
             <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods"></div>
             <div><label for="valoda">Valoda</label>
-            <select id="valoda" name='Valoda' required>
-                <option value="Latvian">Latvian</option>
-                <option value="Russian">Russian</option>
-                <option value="English">English</option>
-            </select></div>
+            <datalist id="valoda" name='Valoda' required>
+               
+</datalist></div>
             <div><label for="originalvaloda">Oriģinālvaloda</label>
             <select id="originalvaloda" name='Originalvaloda' required>
                 <option value="Latvian">Latvian</option>
@@ -63,11 +61,13 @@ $sql="SELECT Nosaukums FROM valsts;";
             <div><label for="uzvards">Uzvārds</label>
             <input type="text" id="uzvards" name="Uzvards" placeholder="Uzvards"></div>
             <div><label for="valsts">Izcelsmes valsts</label>
-            <select id="valsts" name='Valsts'>
-                <option value="1">Latvia</option>
-                <option value="2">Russia</option>
-                <option value="3">United Kingdom</option>
-            </select></div>
+            <datalist id="valoda" name='Valoda' required>
+               <?php 
+               while ($row = mysqli_fetch_assoc($sql_res)) {
+                echo '<option value="'.$row["Nosaukums"].'">';
+                }
+               ?>
+</datalist></div>
             
             <input type="hidden" name="formName" value="autors">
             <input type="submit" value="Submit">
