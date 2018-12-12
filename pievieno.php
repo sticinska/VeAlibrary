@@ -28,9 +28,10 @@ mysqli_close($conn);
 
 
 function pievienoAutoru(){
-    $Vards = mysqli_real_escape_string($_POST['Vards']);
-    $Uzvards = mysqli_real_escape_string($_POST['Uzvards']);
-    $Valsts = mysqli_real_escape_string($_POST['Valsts']);
+    echo 'hello';
+    $Vards = $_POST['Vards'];
+    $Uzvards = $_POST['Uzvards'];
+    $Valsts = $_POST['Valsts'];
 
     $sql = "INSERT INTO autors ('Vards', 'Uzvards, 'IzcelsmesValsts')
             VALUES ('test','test','1')";
