@@ -26,12 +26,15 @@ switch ($_POST['formName']) {
 function pievienoAutoru(){
     $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) 
                     VALUES ('".$_POST["Vards"]."',".$_POST['Uzvards']."',".$_POST['Valsts'].")";
-        
+        echo '1';
     $stmt = $pdo->query($sql);
-    header("Location:pievieno.php"); 
-
-
+    echo '2';
     $stmt->execute();
+    echo '3';
+            
+    
+    header("Location:pievieno.php"); 
+    
     echo "Records inserted successfully.";
     
      
