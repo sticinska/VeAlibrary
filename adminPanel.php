@@ -12,22 +12,27 @@ require_once("templates/header.php");
 <?php
 
 $sql = "SELECT Nosaukums FROM valsts;";
-echo "adsad";
 $result = mysql_query($sql);
 
 echo "<select name='Valsts'>";
 while ($row = mysql_fetch_array($result)) {
-    $Nosaukums = mysql_real_escape_string($row);
-    echo "<option value='" . $Nosaukums . "'>" . $Nosaukums . "</option>";
+    $Nosaukums = mysql_real_escape_string($row["Nosaukums"]);
+    echo "<option value='" . $Nosaukums. "'>" .$Nosaukums. "</option>";
 }
 echo "</select>";
 ?>
         <input type="date" name="Datums" >
         <input type="hidden" name="formName" value="autors">
         <input type="submit" value="Submit">
-    
     </form>
+    <div>
         <h3>Pievieno Gramatas Eksemplaru</h3><br>
+        <form action="addpost.php" autocomplete="no" method="post">
+            <input type="text"  required placeholer="title" name="title"><br>
+            <input id="textarea" required type="textarea" placeholer="contents" name="contents"><br>
+            <input type="submit" value="Add post">
+        </form>
+</div>
         <h3>Pievieno Kategoriju</h3><br>
         <h3>Pievieno Valodu</h3><br>
     
