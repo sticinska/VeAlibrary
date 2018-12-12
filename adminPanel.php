@@ -5,9 +5,8 @@ require_once("templates/header.php");
 $sql = "SELECT Nosaukums FROM valsts;";
 $result = mysql_query($sql);
 
-echo "";
 while ($row = mysql_fetch_array($result)) {
-    $Nosaukums = mysql_real_escape_string($row["Nosaukums"]);
+    $Nosaukums = $row["Nosaukums"];
     echo $Nosaukums;
 }
 
