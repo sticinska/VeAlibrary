@@ -24,18 +24,15 @@ switch ($_POST['formName']) {
 }
 
 function pievienoAutoru(){
-    
-    
-   
-            $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) 
+    $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) 
                     VALUES ('".$_POST["Vards"]."',".$_POST['Uzvards']."',".$_POST['Valsts'].")";
         
-            $stmt = $pdos->query($sql);
-            header("Location:pievieno.php"); 
+    $stmt = $pdo->query($sql);
+    header("Location:pievieno.php"); 
 
 
-        $stmt->execute();
-        echo "Records inserted successfully.";
+    $stmt->execute();
+    echo "Records inserted successfully.";
     
      
     // Close connection
