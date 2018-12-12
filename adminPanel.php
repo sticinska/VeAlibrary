@@ -16,7 +16,7 @@ $sql="SELECT * FROM valsts;";
     array_push($Valodas,$val);
    }
 
-   $sql="SELECT ID, CONCAT(Vards, Uzvards) as Autors FROM autors;";
+   $sql="SELECT ID, CONCAT(Vards,' ',  Uzvards) as Autors FROM autors;";
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
    $Autori = $stmt->get_result();
