@@ -1,17 +1,6 @@
 <?php
 
-try{
-    $pdo = new PDO("mysql:host=localhost;dbname=library", "dbteh", "DBteh-2018");
-    // Set the PDO error mode to exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e){
-    die("ERROR: Could not connect. " . $e->getMessage());
-}
-
-
-$sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) 
-                    VALUES ('".."',".$_POST['Uzvards']."',".$_POST['Valsts'].")";
-        
+require_once("templates/header.php");
         
         $stmt = $conn->prepare("INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) VALUES (?, ?, ?)");
         $stmt->bind_param('ssi', $vards, $uzv, $valsts);
