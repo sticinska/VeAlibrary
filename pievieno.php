@@ -23,29 +23,20 @@ switch ($_POST['formName']) {
         break;
 }
 
-
-mysqli_close($conn);
-
-
-
-
-
-
-
-
 function pievienoAutoru(){
     
     
     try{
+        echo 'hello1';
         // Create prepared statement
         $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) VALUES (:vards, :uzv, :valsts)";
         $stmt = $pdo->prepare($sql);
-        
+        echo '2';
         // Bind parameters to statement
         $stmt->bindParam(':vards', $_POST['Vards']);
         $stmt->bindParam(':uzv',$_POST['Uzvards']);
         $stmt->bindParam(':valsts',$_POST['Valsts']);
-        echo 'hello';
+        echo '3';
         // Execute the prepared statement
         $stmt->execute();
         echo "Records inserted successfully.";
