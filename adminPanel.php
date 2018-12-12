@@ -1,13 +1,13 @@
 <?php
 require_once("templates/header.php");
 
-
+/*
 $sql = "SELECT Nosaukums FROM valsts;";
 $result = mysql_query($conn,$sql);
 
 while ($row = mysql_fetch_array($result)) {
     echo $row;
-}
+}*/
 
 ?>
 
@@ -19,10 +19,11 @@ while ($row = mysql_fetch_array($result)) {
         <input type="text" name="Vards" placeholder="Vards">
         <input type="text" name="Uzvards" placeholder="Uzvards">
         <select name='Valsts'>
-
+            <option value="Latvia">Latvia</option>
+            <option value="Russia">Russia</option>
+            <option value="United Kingdom">United Kingdom</option>
 
         </select>
-
 <?php
 
 ?>
