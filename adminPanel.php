@@ -69,6 +69,7 @@ $sql="SELECT * FROM valsts;";
             <input type="text" id="apjoms" min="1" name="Apjoms" placeholder="Lappušu skaits"></div>
             <div><label for="izdevnieciba">Izdevnieciba</label><br>
             <select id="izdevnieciba" name='Izdevnieciba'>
+            <option style="display:none">
             <?php 
                while ($row = mysqli_fetch_assoc($Izdevniecibas)) {
                     echo '<option value="'.$row["ID"].'">'.$row["Nosaukums"].'</option>';
@@ -93,6 +94,7 @@ $sql="SELECT * FROM valsts;";
             <input type="text" id="uzvards" name="Uzvards" placeholder="Uzvards"></div>
             <div><label for="valsts">Izcelsmes valsts</label><br>
             <select id="valoda" name='Valoda' required>
+            <option style="display:none">
                <?php 
                while ($row = mysqli_fetch_assoc($Valstis)) {
                     echo '<option value="'.$row["ID"].'">'.$row["Nosaukums"].'</option>';
