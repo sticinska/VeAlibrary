@@ -43,7 +43,7 @@ function pievienoAutoru(){
     if(mysqli_query($conn, $sql)){
         echo "Records added successfully.";
     } else{
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
     }
     
 }
