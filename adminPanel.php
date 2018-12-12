@@ -40,7 +40,7 @@ while ($row = mysql_fetch_array($result)) {
                 <option value="English">English</option>
             </select></div>
             <div><label for="apjoms">Lappušu skaits</label>
-            <input type="text" id="apjoms" name="apjoms" placeholder="Lappušu skaits"></div>
+            <input type="text" id="apjoms" name="Apjoms" placeholder="Lappušu skaits"></div>
             <div><label for="izdevnieciba">Izdevnieciba</label>
             <input type="text" id="izdevnieciba" name="Izdevnieciba" placeholder="Izdevnieciba"></div>
             <div><label for="izdevumaGads">Izdevuma gads</label>
