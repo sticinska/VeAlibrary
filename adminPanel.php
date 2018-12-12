@@ -9,7 +9,11 @@ $sql="SELECT * FROM valsts;";
    $sql="SELECT * FROM valoda;";
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
-   $Valodas = $stmt->get_result();
+   $Valodas = array();
+   $res = $stmt->get_result();
+   while ($row = mysqli_fetch_assoc($res)) {
+       array_push($Valodas,($row["id"], $row["Valoda"]));
+    }
 
 ?>
 
@@ -32,17 +36,15 @@ $sql="SELECT * FROM valsts;";
             <div><label for="valoda">Valoda</label><br>
             <select id="valoda" name='Valoda' required>
             <?php 
-               while ($row = mysqli_fetch_assoc($Valodas)) {
-                    echo '<option value="'.$row["id"].'">'.$row["Valoda"].'</option>';
-                }
+               
                ?>
 </select></div>
             <div><label for="originalvaloda">Oriģinālvaloda</label><br>
             <select id="originalvaloda" name='Originalvaloda' required>
             <?php 
-               while ($row = mysqli_fetch_assoc($Valodas)) {
-                    echo '<option value="'.$row["id"].'">'.$row["Valoda"].'</option>';
-                }
+               foreach($Valodas as &$value){
+                echo '<option value="'.$value[0].'">'.$value[1].'</option>';
+               }
                ?>
             </select></div>
             <div><label for="apjoms">Lappušu skaits</label><br>
