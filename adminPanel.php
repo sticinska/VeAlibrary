@@ -1,16 +1,15 @@
 <?php
 require_once("templates/header.php");
 
-$sql="SELECT Nosaukums FROM valsts;";
-
+$sql="SELECT * FROM valsts;";
    $stmt = mysqli_prepare($conn, $sql);
-   mysqli_stmt_bind_param($stmt, "s", $skaits);
    $stmt->execute();
    $Valstis = $stmt->get_result();
 
-   while ($row = mysqli_fetch_assoc($sql_res)) {
-       echo $row["Nosaukums"];
-   }
+   $sql="SELECT * FROM valoda;";
+   $stmt = mysqli_prepare($conn, $sql);
+   $stmt->execute();
+   $Valodas = $stmt->get_result();
 
 ?>
 
@@ -31,14 +30,20 @@ $sql="SELECT Nosaukums FROM valsts;";
             <div><label for="ISBN">ISBN kods</label><br>
             <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods"></div>
             <div><label for="valoda">Valoda</label><br>
-            <datalist id="valoda" name='Valoda' required>
-               
-</datalist></div>
+            <select id="valoda" name='Valoda' required>
+            <?php 
+               while ($row = mysqli_fetch_assoc($Valodas)) {
+                    echo '<option value="'.$row["id"].'">'.$row["Valoda"].'</option>';
+                }
+               ?>
+</select></div>
             <div><label for="originalvaloda">Oriģinālvaloda</label><br>
             <select id="originalvaloda" name='Originalvaloda' required>
-                <option value="Latvian">Latvian</option>
-                <option value="Russian">Russian</option>
-                <option value="English">English</option>
+            <?php 
+               while ($row = mysqli_fetch_assoc($Valodas)) {
+                    echo '<option value="'.$row["id"].'">'.$row["Valoda"].'</option>';
+                }
+               ?>
             </select></div>
             <div><label for="apjoms">Lappušu skaits</label><br>
             <input type="text" id="apjoms" name="Apjoms" placeholder="Lappušu skaits"></div>
@@ -64,7 +69,7 @@ $sql="SELECT Nosaukums FROM valsts;";
             <select id="valoda" name='Valoda' required>
                <?php 
                while ($row = mysqli_fetch_assoc($Valstis)) {
-                    echo '<option value="'.$row["Nosaukums"].'">'.$row["Nosaukums"].'</option>';
+                    echo '<option value="'.$row["ID"].'">'.$row["Nosaukums"].'</option>';
                 }
                ?>
             </select></div>
