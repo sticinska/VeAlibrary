@@ -34,7 +34,8 @@ $sql="SELECT * FROM valsts;";
             </div>
 
         <div><label for="autors">Grāmatas Autors</label><br>
-            <datalist id="autors" name='Autors' multiple>
+        <input list="autors">
+            <datalist id="autors" name='Autors'>
             <?php 
                while ($row = mysqli_fetch_assoc($Autori)) {
                     echo '<option value="'.$row["ID"].'">'.$row["Autors"].'</option>';
