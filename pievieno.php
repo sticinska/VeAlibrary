@@ -26,26 +26,17 @@ switch ($_POST['formName']) {
 function pievienoAutoru(){
     
     
-    try{
-        echo 'hello1';
-        // Create prepared statement
-            
-        
-        if ($_POST['Vards']!="") {
+   
             $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts) 
                     VALUES ('".$_POST["Vards"]."',".$_POST['Uzvards']."',".$_POST['Valsts'].")";
         
             $stmt = $pdos->query($sql);
             header("Location:pievieno.php"); 
-        }else{
-        }
 
 
         $stmt->execute();
         echo "Records inserted successfully.";
-    } catch(PDOException $e){
-        die("ERROR: Could not able to execute $sql. " . $e->getMessage());
-    }
+    
      
     // Close connection
     unset($pdo);
