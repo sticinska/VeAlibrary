@@ -13,7 +13,7 @@ while ($row = mysql_fetch_array($result)) {
 
     
         <h3>Pievieno Gramatu</h3><br>
-        <form action="pievieno.php" method="POST">
+        <form action="pievienoGramatu.php" method="POST">
 <div>
         <label for="nosaukums">Nosaukums</label>
             <input type="text" id="vards" name="Nosaukums" placeholder="Nosaukums" required>
