@@ -17,8 +17,8 @@ if ( isset( $_GET[ "id" ] ) )
    $row = mysqli_fetch_array($sql_res);
    echo '<div><h3>"'.$row["Nosaukums"].'"</h3></div>';
 
-   $sql="SELECT CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors FROM gramatasAutori LEFT JOIN autors ON autors.ID = gramatasAutori.AutorsID WHERE GramataID=?;"
-    $stmt = mysqli_prepare($conn, $sql);
+   $sql="call getGramatasAutori(?);"
+   $stmt = mysqli_prepare($conn, $sql);
    mysqli_stmt_bind_param($stmt, "s", $bookID);
    $stmt->execute();
    $sql_res = $stmt->get_result();
