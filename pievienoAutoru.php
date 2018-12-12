@@ -18,7 +18,7 @@ $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts)
     echo '3';
             
     
-    header("Location:pievieno.php"); 
+    header("Location:adminPanel.php"); 
     
     echo "Records inserted successfully.";
     
