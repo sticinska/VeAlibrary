@@ -1,13 +1,13 @@
 <?php
 require_once("templates/header.php");
 
-/*
+
 $sql = "SELECT Nosaukums FROM valsts;";
 $result = mysql_query($conn,$sql);
 
 while ($row = mysql_fetch_array($result)) {
     echo $row;
-}*/
+}
 
 ?>
 
