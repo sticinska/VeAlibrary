@@ -61,13 +61,13 @@ $sql="SELECT Nosaukums FROM valsts;";
             <div><label for="uzvards">Uzvārds</label>
             <input type="text" id="uzvards" name="Uzvards" placeholder="Uzvards"></div>
             <div><label for="valsts">Izcelsmes valsts</label>
-            <datalist id="valoda" name='Valoda' required>
+            <select id="valoda" name='Valoda' required>
                <?php 
                while ($row = mysqli_fetch_assoc($sql_res)) {
                 echo '<option value="'.$row["Nosaukums"].'">';
                 }
                ?>
-</datalist></div>
+</select></div>
             
             <input type="hidden" name="formName" value="autors">
             <input type="submit" value="Submit">
