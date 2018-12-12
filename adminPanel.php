@@ -44,7 +44,7 @@ while ($row = mysql_fetch_array($result)) {
             <div><label for="izdevnieciba">Izdevnieciba</label>
             <input type="text" id="izdevnieciba" name="Izdevnieciba" placeholder="Izdevnieciba"></div>
             <div><label for="izdevumaGads">Izdevuma gads</label>
-            <input type="number" id="izdevumaGads" name="IzdevumaGads" placeholder="2018"></div>
+            <input type="number" id="izdevumaGads" name="IzdevumaGads" min="1000" max="2018" value="2018"></div>
 
 
             <input type="hidden" name="formName" value="gramata">
