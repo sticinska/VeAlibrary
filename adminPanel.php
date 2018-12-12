@@ -2,11 +2,11 @@
 require_once("templates/header.php");
 
 
-$sql = "SELECT Nosaukums FROM valsts;";
+$sql = "SELECT Vards FROM valsts;";
 $result = mysql_query($sql);
 
 while ($row = mysql_fetch_array($result)) {
-    $Nosaukums = $row["Nosaukums"];
+    $Nosaukums = mysql_real_escape_string($row["Vards"]);
     echo $Nosaukums;
 }
 
