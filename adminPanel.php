@@ -16,6 +16,13 @@ $sql="SELECT * FROM valsts;";
     array_push($Valodas,$val);
    }
 
+   $sql="SELECT ID, CONCAT(Vards, Uzvards) as Autors FROM autors;";
+   $stmt = mysqli_prepare($conn, $sql);
+   $stmt->execute();
+   $Autori = $stmt->get_result();
+
+
+
 ?>
 
     
@@ -28,16 +35,20 @@ $sql="SELECT * FROM valsts;";
 
         <div><label for="autors">Grāmatas Autors</label><br>
             <select id="autors" name='Autors' multiple>
-                <option value="viens">autors viens</option>
-                <option value="divi">autors divi</option>
-                <option value="tris">autors tris</option>
+            <?php 
+               while ($row = mysqli_fetch_assoc($Autori)) {
+                    echo '<option value="'.$row["ID"].'">'.$row["Autors"].'</option>';
+                }
+               ?>
             </select></div>
             <div><label for="ISBN">ISBN kods</label><br>
             <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods"></div>
             <div><label for="valoda">Valoda</label><br>
             <select id="valoda" name='Valoda' required>
             <?php 
-               
+               foreach($Valodas as &$value){
+                echo '<option value="'.$value[0].'">'.$value[1].'</option>';
+               }
                ?>
 </select></div>
             <div><label for="originalvaloda">Oriģinālvaloda</label><br>
