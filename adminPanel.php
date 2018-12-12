@@ -34,13 +34,13 @@ $sql="SELECT * FROM valsts;";
             </div>
 
         <div><label for="autors">Grāmatas Autors</label><br>
-            <select id="autors" name='Autors' multiple>
+            <datalist id="autors" name='Autors' multiple>
             <?php 
                while ($row = mysqli_fetch_assoc($Autori)) {
                     echo '<option value="'.$row["ID"].'">'.$row["Autors"].'</option>';
                 }
                ?>
-            </select></div>
+            </datalist></div>
             <div><label for="ISBN">ISBN kods</label><br>
             <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods"></div>
             <div><label for="valoda">Valoda</label><br>
