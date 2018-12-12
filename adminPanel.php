@@ -16,7 +16,7 @@ while ($row = mysql_fetch_array($result)) {
         <form action="pievieno.php" method="POST">
 <div>
         <label for="nosaukums">Nosaukums</label>
-            <input type="text" id="vards" name="Nosaukums" placeholder="Nosaukums">
+            <input type="text" id="vards" name="Nosaukums" placeholder="Nosaukums" required>
             </div>
 
         <div><label for="autors">Grāmatas Autors</label>
@@ -28,13 +28,13 @@ while ($row = mysql_fetch_array($result)) {
             <div><label for="ISBN">ISBN kods</label>
             <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods"></div>
             <div><label for="valoda">Valoda</label>
-            <select id="valoda" name='Valoda'>
+            <select id="valoda" name='Valoda' required>
                 <option value="Latvian">Latvian</option>
                 <option value="Russian">Russian</option>
                 <option value="English">English</option>
             </select></div>
             <div><label for="originalvaloda">Oriģinālvaloda</label>
-            <select id="originalvaloda" name='Originalvaloda'>
+            <select id="originalvaloda" name='Originalvaloda' required>
                 <option value="Latvian">Latvian</option>
                 <option value="Russian">Russian</option>
                 <option value="English">English</option>
@@ -56,17 +56,16 @@ while ($row = mysql_fetch_array($result)) {
         <h3>Pievieno Autoru</h3><br>
         <form action="pievieno.php" method="POST">
         <div><label for="vards">Vārds</label>
-            <input type="text" id="vards" name="Vards" placeholder="Vards"></div>
+            <input type="text" id="vards" name="Vards" placeholder="Vards" required></div>
             <div><label for="uzvards">Uzvārds</label>
             <input type="text" id="uzvards" name="Uzvards" placeholder="Uzvards"></div>
             <div><label for="valsts">Izcelsmes valsts</label>
             <select id="valsts" name='Valsts'>
-                <option value="Latvia">Latvia</option>
-                <option value="Russia">Russia</option>
-                <option value="United Kingdom">United Kingdom</option>
+                <option value="1">Latvia</option>
+                <option value="2">Russia</option>
+                <option value="3">United Kingdom</option>
             </select></div>
-            <div><label for="datums">Dzimšanas datums</label>
-            <input id="datums"  type="date" name="Datums" ></div>
+            
             <input type="hidden" name="formName" value="autors">
             <input type="submit" value="Submit">
         </form>

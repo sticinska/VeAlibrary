@@ -28,14 +28,12 @@ mysqli_close($conn);
 
 
 function pievienoAutoru(){
-    $Vards = $_POST['Vards'];
-    $Uzvards = $_POST['Uzvards'];
-    $Valsts = $_POST['Valsts'];
-    $Datums = $_POST['Datums'];
-    
-    
-    $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts, DzimsanasDatums)
-    VALUES ('John', 'Doe')";
+    $Vards = mysqli_real_escape_string($_POST['Vards']);
+    $Uzvards = mysqli_real_escape_string($_POST['Uzvards']);
+    $Valsts = mysqli_real_escape_string($_POST['Valsts']);
+
+    $sql = "INSERT INTO autors ('Vards', 'Uzvards, 'IzcelsmesValsts')
+            VALUES ('$Vards','$Uzvards','$Valsts')";
     
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
