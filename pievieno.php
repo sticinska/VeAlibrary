@@ -33,6 +33,10 @@ function pievienoAutoru(){
     $Uzvards = $_POST['Uzvards'];
     $Valsts = $_POST['Valsts'];
 
+    echo $Vards;
+    echo $Uzvards;
+    echo $Valsts;
+
     $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts)
             VALUES ('test','test','1')";
     
