@@ -6,7 +6,7 @@ html {
 body {
  height: auto;
   background-image: url("img/books.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
 }
 

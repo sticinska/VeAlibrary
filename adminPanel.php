@@ -26,6 +26,11 @@ $sql="SELECT * FROM valsts;";
    $stmt->execute();
    $Izdevniecibas = $stmt->get_result();
 
+   $sql="SELECT GramataaID, Nosaukums FROM gramata;";
+   $stmt = mysqli_prepare($conn, $sql);
+   $stmt->execute();
+   $Gramatas = $stmt->get_result();
+
 
 
 ?>
@@ -109,8 +114,16 @@ $sql="SELECT * FROM valsts;";
     <div>
         <h3>Pievieno Gramatas Eksemplaru</h3><br>
         <form action="addpost.php" autocomplete="no" method="post">
-            <input type="text"  required placeholer="title" name="title"><br>
-            <input id="textarea" required type="textarea" placeholer="contents" name="contents"><br>
+        <div><label for="autors">Grāmata</label><br>
+        <input list="gramata">
+            <datalist id="gramata" required name='Gramata'>
+            <?php 
+               while ($row = mysqli_fetch_assoc($Gramatas)) {
+                    echo '<option value="'.$row["GramataaID"].'">'.$row["Nosaukums"].'</option>';
+                }
+               ?>
+            </datalist></div>
+            <input type="text" placeholer="Bibliotēkas svītrkods" name="bibsvitras" required><br>
             <input type="submit" value="Add post">
         </form>
 </div>
