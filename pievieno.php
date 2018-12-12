@@ -38,12 +38,12 @@ function pievienoAutoru(){
     echo $Valsts;
 
     $sql = "INSERT INTO autors (Vards, Uzvards, IzcelsmesValsts)
-            VALUES ('test','test','1')";
+            VALUES ('test','test',1)";
     
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    if(mysqli_query($conn, $sql)){
+        echo "Records added successfully.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
     }
     
 }
