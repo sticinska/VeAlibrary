@@ -23,10 +23,10 @@ require_once("templates/header.php");
     $gramata = $value[1];
     $gramatasID = $value[0];
      
-
+/*
      $sql1="SELECT * FROM autors;";
      $stmt1 = mysqli_prepare($conn, $sql1);
-     if(!$stmt1->execute()) echo $stmt1->error;
+     if(!$stmt1->execute())  $stmt1->error;*/
 
      echo '<div class="media attribution">';
      echo '<li class="media">';
