@@ -12,15 +12,20 @@ require_once("templates/header.php");
    $stmt = mysqli_prepare($conn, $sql);
    mysqli_stmt_bind_param($stmt, "s", $skaits);
    $stmt->execute();
-   $sql_res = $stmt->get_result();
+   $Gramatas = array();
+   $res = $stmt->get_result();
+   while ($row = mysqli_fetch_assoc($res)) {
+    $gr = array($row["GID"], $row["Nosaukums"]);    
+    array_push($Gramatas,$gr);
+   }
 
-   while ($row = mysqli_fetch_assoc($sql_res)) {
+   foreach($Gramatas as &$value) {
      
-     $gramata = $row["Nosaukums"];
+     $gramata = $value[1];
 
      $stmtz = $conn->prepare("call getGramatasAutori(?);"
      $stmtz->bind_param("s", $gramatasID);
-     $gramatasID = $row["GID"];
+     $gramatasID = $value[0];
      $stmtz->execute() or die(mysql_error()."update failed");; 
      $res = $stmtz->get_result();
 
