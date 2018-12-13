@@ -24,9 +24,9 @@ require_once("templates/header.php");
     $gramatasID = $value[0];
      
 
-     $sql="SELECT CONCAT(Vards,' ',  Uzvards) as Autors FROM autors;";
-    $stmt = mysqli_prepare($conn, $sql);
-   $stmt->execute();
+     $sql1="SELECT CONCAT(Vards,' ',  Uzvards) as Autors FROM autors;";
+    $stmt1 = mysqli_prepare($conn, $sql1);
+   $stmt1->execute();
 
      echo '<div class="media attribution">';
      echo '<li class="media">';
