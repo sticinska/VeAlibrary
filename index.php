@@ -2,7 +2,7 @@
 require_once("templates/header.php");
 ?>
     <div> 
-    <h1 id="heading">Jaunākās grāmatas biblotēkā</h1>
+    <h1 id="heading">Jaunākās grāmatas bibliotēkā</h1>
     <ul class="list-unstyled" style="width=auto">
 
 <?php
@@ -15,14 +15,15 @@ require_once("templates/header.php");
    $sql_res = $stmt->get_result();
 
    while ($row = mysqli_fetch_assoc($sql_res)) {
-     $gramatasID = $row["GID"];
+     
      $gramata = $row["Nosaukums"];
 
-   //  $sqln="call getGramatasAutori(?);"
-    // $stmtn = mysqli_prepare($conn, $sqln);
-    // mysqli_stmt_bind_param($stmtn, "s", $gramatasID);
-    //$stmtn->execute() or die(mysql_error()."update failed");; 
-     //$res = $stmtn->get_result();
+    $sqln="call getGramatasAutori(?);"
+   $stmtn = mysqli_prepare($conn, $sqln);
+   mysqli_stmt_bind_param($stmtn, "s", $gramatasID);
+   $gramatasID = $row["GID"];
+    $stmtn->execute() or die(mysql_error()."update failed");; 
+     $res = $stmtn->get_result();
 
      echo '<div class="media attribution">';
      echo '<li class="media">';
