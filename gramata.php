@@ -25,6 +25,13 @@ if ( isset( $_GET[ "id" ] ) )
    while($row = mysqli_fetch_array($sql_res)){
          echo '<div><p>'.$row["Autors"].'</p></div>';
    }*/
+
+   $sql="SELECT DISTINCT ID, Kategorija FROM kategorija;";
+   $stmt = mysqli_prepare($conn, $sql);
+   $stmt->execute();
+   $Kategorijas = $stmt->get_result();
+   
+
    
 
 
