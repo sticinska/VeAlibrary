@@ -1,7 +1,7 @@
 <?php
 require_once("templates/header.php");
 
-$stmt = $conn->prepare("INSERT INTO kategorija (Kategorija, Virskategorija) VALUES (?, ?, GETDATE(), true)");
+$stmt = $conn->prepare("INSERT INTO kategorija (Kategorija, Virskategorija) VALUES (?, ?)");
 $stmt->bind_param('si', $k, $vk);
         
 $k = $_POST["Nosaukums"];

@@ -1,10 +1,10 @@
 <?php
 require_once("templates/header.php");
 
-$stmt = $conn->prepare("INSERT INTO eksemplars (Gramata, BiblSvitrkods) VALUES (?, ?, GETDATE(), 1)");
+$stmt = $conn->prepare("INSERT INTO eksemplars (Gramata, BiblSvitrkods) VALUES (?, ?");
 $stmt->bind_param('is', $g, $s);
         
-$g = $_POST["Gramata"];
+$g = $_POST["gramata"];
 $s = $_POST["bibsvitras"];
 
 $stmt->execute();

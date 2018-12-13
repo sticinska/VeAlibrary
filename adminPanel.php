@@ -121,7 +121,7 @@ $sql="SELECT * FROM valsts;";
         <form action="pievienoEksemplaru.php" autocomplete="no" method="post">
         <div><label for="autors">Grāmata</label><br>
         <input list="gramata">
-            <datalist id="gramata" required name='Gramata'>
+            <datalist id="gramata" required name="gramata">
             <?php 
                while ($row = mysqli_fetch_assoc($Gramatas)) {
                     echo '<option value="'.$row["GramataaID"].'">'.$row["Nosaukums"].'</option>';
