@@ -26,7 +26,7 @@ require_once("templates/header.php");
 
      $sql1="SELECT * FROM autors;";
      $stmt1 = mysqli_prepare($conn, $sql1);
-     $stmt1->execute();
+     if(!$stmt1->execute()) echo $stmt1->error;
 
      echo '<div class="media attribution">';
      echo '<li class="media">';
