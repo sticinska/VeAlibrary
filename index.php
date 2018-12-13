@@ -18,20 +18,19 @@ require_once("templates/header.php");
      
      $gramata = $row["Nosaukums"];
 
-    $sqln="call getGramatasAutori(?);"
-   $stmtn = mysqli_prepare($conn, $sqln);
-   mysqli_stmt_bind_param($stmtn, "s", $gramatasID);
-   $gramatasID = $row["GID"];
-    $stmtn->execute() or die(mysql_error()."update failed");; 
-     $res = $stmtn->get_result();
+     $stmtz = $conn->prepare("call getGramatasAutori(?);"
+     $stmtz->bind_param("s", $gramatasID);
+     $gramatasID = $row["GID"];
+     $stmtz->execute() or die(mysql_error()."update failed");; 
+     $res = $stmtz->get_result();
 
      echo '<div class="media attribution">';
      echo '<li class="media">';
      echo '<img class="bookimg" src="imp/img/bookF/tmp.jpg" alt="Generic placeholder image">';
      echo '<div class="media-body">';
-     while($autorsRow = mysqli_fetch_assoc($res)){
-        echo '<a href="autors.php?id=' .$autorsRow["AID"]. '"><h5 class="mt-0 mb-1">'.$autorsRow["Autors"].' </a>';
-     }
+     //while($autorsRow = mysqli_fetch_assoc($res)){
+       // echo '<a href="autors.php?id=' .$autorsRow["AID"]. '"><h5 class="mt-0 mb-1">'.$autorsRow["Autors"].' </a>';
+     //}
      
      echo '<a href="gramata.php?id='.$row["GID"].'">"'.$gramata.'"</h5></a>';
      echo 'default graamatas apraksts</div></li></div>';
