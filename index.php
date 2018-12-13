@@ -20,12 +20,13 @@ require_once("templates/header.php");
    }
 
    foreach($Gramatas as &$value) {
+    $gramata = $value[1];
+    $gramatasID = $value[0];
      
-     $gramata = $value[1];
 
      $sql="SELECT CONCAT(Vards,' ',  Uzvards) as Autors FROM autors;";
     $stmt = mysqli_prepare($conn, $sql);
-    $stmt->execute();
+   $stmt->execute();
 
      echo '<div class="media attribution">';
      echo '<li class="media">';
