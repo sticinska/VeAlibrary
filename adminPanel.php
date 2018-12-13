@@ -42,7 +42,7 @@ $sql="SELECT * FROM valsts;";
 
     
         <h3>Pievieno Gramatu</h3><br>
-        <form action="pievienoGramatu.php" method="POST">
+        <form action="admin/pievienoGramatu.php" method="POST">
 <div>
         <label for="nosaukums">Nosaukums</label><br>
             <input type="text" id="vards" name="Nosaukums" placeholder="Nosaukums" required>
@@ -97,7 +97,7 @@ $sql="SELECT * FROM valsts;";
 
 <div>
         <h3>Pievieno Autoru</h3><br>
-        <form action="pievienoAutoru.php" method="POST">
+        <form action="admin/pievienoAutoru.php" method="POST">
         <div><label for="vards">Vārds</label><br>
             <input type="text" id="vards" name="Vards" placeholder="Vards" required></div>
             <div><label for="uzvards">Uzvārds</label><br>
@@ -118,7 +118,7 @@ $sql="SELECT * FROM valsts;";
 </div>
     <div>
         <h3>Pievieno Gramatas Eksemplaru</h3><br>
-        <form action="addpost.php" autocomplete="no" method="post">
+        <form action="admin/pievienoEksemplaru.php" autocomplete="no" method="post">
         <div><label for="autors">Grāmata</label><br>
         <input list="gramata">
             <datalist id="gramata" required name='Gramata'>
@@ -135,7 +135,7 @@ $sql="SELECT * FROM valsts;";
 </div>
 <div>
         <h3>Pievieno Kategoriju</h3><br>
-        <form action="xxx.php" autocomplete="no" method="post">
+        <form action="admin/pievienoKategoriju.php" autocomplete="no" method="post">
         <div><label for="virs">Virskategorija</label><br>
         <input list="virs">
             <datalist id="virs" name='Virskategorija'>
@@ -153,11 +153,19 @@ $sql="SELECT * FROM valsts;";
         <div>
 
         <h3>Pievieno Valodu</h3><br>
-        <form action="pievienoValodu.php" autocomplete="no" method="post">
+        <form action="admin/pievienoValodu.php" autocomplete="no" method="post">
         <div>
             <label for="nosaukums">Valoda</label><br>
             <input type="text" id="nosaukums" placeholer="Valoda" name="Nosaukums" required></div><br>
             <input type="submit" value="Pievieno Valodu">
+        </form>
+
+        <h3>Pievieno Izdevniecibu</h3><br>
+        <form action="admin/pievienoIzdevniecibu.php" autocomplete="no" method="post">
+        <div>
+            <label for="nosaukums">Izdevnieciba</label><br>
+            <input type="text" id="nosaukums" placeholer="Izdevnieciba" name="Nosaukums" required></div><br>
+            <input type="submit" value="Pievieno Izdevniecibu">
         </form>
 
     
