@@ -153,7 +153,7 @@ $sql="SELECT * FROM valsts;";
         <div>
 
         <h3>Pievieno Valodu</h3><br>
-        <form action="admin/pievienoValodu.php" autocomplete="no" method="post">
+        <form action="/admin/pievienoValodu.php" autocomplete="no" method="post">
         <div>
             <label for="nosaukums">Valoda</label><br>
             <input type="text" id="nosaukums" placeholer="Valoda" name="Nosaukums" required></div><br>
