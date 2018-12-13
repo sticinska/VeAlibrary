@@ -29,9 +29,9 @@ require_once("templates/header.php");
      echo '<li class="media">';
      echo '<img class="bookimg" src="imp/img/bookF/tmp.jpg" alt="Generic placeholder image">';
      echo '<div class="media-body">';
-     //while($autorsRow = mysqli_fetch_assoc($res)){
-       // echo '<a href="autors.php?id=' .$autorsRow["AID"]. '"><h5 class="mt-0 mb-1">'.$autorsRow["Autors"].' </a>';
-     //}
+     while($autorsRow = mysqli_fetch_assoc($res)){
+        echo '<a href="autors.php?id=' .$autorsRow["AID"]. '"><h5 class="mt-0 mb-1">'.$autorsRow["Autors"].' </a>';
+     }
      
      echo '<a href="gramata.php?id='.$row["GID"].'">"'.$gramata.'"</h5></a>';
      echo 'default graamatas apraksts</div></li></div>';
