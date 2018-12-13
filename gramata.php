@@ -30,6 +30,7 @@ if ( isset( $_GET[ "id" ] ) )
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
    $Kategorijas = $stmt->get_result();
+   echo '<h1>dasdsad</h1>'
    
 
    
