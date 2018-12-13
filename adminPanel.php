@@ -42,7 +42,7 @@ $sql="SELECT * FROM valsts;";
 
     
         <h3>Pievieno Gramatu</h3><br>
-        <form action="admin/pievienoGramatu.php" method="POST">
+        <form action="pievienoGramatu.php" method="POST">
 <div>
         <label for="nosaukums">Nosaukums</label><br>
             <input type="text" id="vards" name="Nosaukums" placeholder="Nosaukums" required>
