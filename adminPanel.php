@@ -94,7 +94,7 @@ $sql="SELECT * FROM valsts;";
             <div><input type="submit" value="Submit"></div>
         </form>
         
-
+        <hr><br><br>
 <div>
         <h3>Pievieno Autoru</h3><br>
         <form action="pievienoAutoru.php" method="POST">
@@ -115,7 +115,7 @@ $sql="SELECT * FROM valsts;";
             <input type="hidden" name="formName" value="autors">
             <input type="submit" value="Submit">
         </form>
-</div>
+</div><hr><br><br>
     <div>
         <h3>Pievieno Gramatas Eksemplaru</h3><br>
         <form action="pievienoEksemplaru.php" autocomplete="no" method="post">
@@ -132,7 +132,7 @@ $sql="SELECT * FROM valsts;";
             <input type="text" id="svitras" placeholer="Bibliotēkas svītrkods" name="bibsvitras" required><br>
             <input type="submit" value="Add post">
         </form>
-</div>
+</div><hr><br><br>
 <div>
         <h3>Pievieno Kategoriju</h3><br>
         <form action="pievienoKategoriju.php" autocomplete="no" method="post">
@@ -149,7 +149,7 @@ $sql="SELECT * FROM valsts;";
             <input type="text" id="nosaukums" placeholer="Kategorijas nosaukums" name="Nosaukums" required><br>
             <input type="submit" value="Pievieno Kategoriju">
         </form>
-        </div>
+        </div><hr><br><br>
         <div>
 
         <h3>Pievieno Valodu</h3><br>
@@ -158,7 +158,7 @@ $sql="SELECT * FROM valsts;";
             <label for="nosaukums">Valoda</label><br>
             <input type="text" id="nosaukums" placeholer="Valoda" name="Nosaukums" required></div><br>
             <input type="submit" value="Pievieno Valodu">
-        </form>
+        </form><hr><br><br>
 
         <h3>Pievieno Izdevniecibu</h3><br>
         <form action="pievienoIzdevniecibu.php" autocomplete="no" method="post">
