@@ -31,6 +31,11 @@ $sql="SELECT * FROM valsts;";
    $stmt->execute();
    $Gramatas = $stmt->get_result();
 
+   $sql="SELECT DISTINCT ID, Kategorija FROM kategorija;";
+   $stmt = mysqli_prepare($conn, $sql);
+   $stmt->execute();
+   $Kategorijas = $stmt->get_result();
+
 
 
 ?>
@@ -130,7 +135,20 @@ $sql="SELECT * FROM valsts;";
 </div>
 <div>
         <h3>Pievieno Kategoriju</h3><br>
-
+        <form action="xxx.php" autocomplete="no" method="post">
+        <div><label for="virs">Virskategorija</label><br>
+        <input list="virs">
+            <datalist id="virs" name='Virskategorija'>
+            <?php 
+               while ($row = mysqli_fetch_assoc($Kategorijas)) {
+                    echo '<option value="'.$row["ID"].'">'.$row["Kategorija"].'</option>';
+                }
+               ?>
+            </datalist></div>
+            <label for="nosaukums">Kategorijas nosaukums</label><br>
+            <input type="text" id="nosaukums" placeholer="Kategorijas nosaukums" name="Nosaukums" required><br>
+            <input type="submit" value="Pievieno Kategoriju">
+        </form>
         </div>
         <div>
 
