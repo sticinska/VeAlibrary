@@ -167,6 +167,7 @@ $sql="SELECT * FROM valsts;";
             <input type="text" id="nosaukums" placeholer="Izdevnieciba" name="Nosaukums" required></div><br>
             <input type="submit" value="Pievieno Izdevniecibu">
         </form>
+        <br><br><br>
 
     
 
