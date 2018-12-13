@@ -37,7 +37,7 @@ require_once("templates/header.php");
        // echo '<a href="autors.php?id=' .$autorsRow["AID"]. '"><h5 class="mt-0 mb-1">'.$autorsRow["Autors"].' </a>';
      //}
      
-     echo '<a href="gramata.php?id='.$row["GID"].'">"'.$gramata.'"</h5></a>';
+     echo '<a href="gramata.php?id='.$gramatasID.'">"'.$gramata.'"</h5></a>';
      echo 'default graamatas apraksts</div></li></div>';
     }
 
