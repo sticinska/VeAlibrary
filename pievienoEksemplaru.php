@@ -1,7 +1,7 @@
 <?php
 require_once("templates/header.php");
 
-$stmt = $conn->prepare("INSERT INTO eksemplars (Gramata, BiblSvitrkods) VALUES (?, ?)");
+$stmt = $conn->prepare("INSERT INTO eksemplars (Gramata, BiblSvitrkods) VALUES (?, ?, GETDATE(), true)");
 $stmt->bind_param('issi', $g, $s, $d, $ir);
         
 $g = $_POST["Gramata"];
