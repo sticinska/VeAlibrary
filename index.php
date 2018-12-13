@@ -23,7 +23,7 @@ require_once("templates/header.php");
      
      $gramata = $value[1];
 
-     $stmtz = $conn->prepare("call getGramatasAutori(?);"
+     //$stmtz = $conn->prepare("call getGramatasAutori(?);"
      //$stmtz->bind_param("s", $gramatasID);
     /// $gramatasID = $value[0];
      ///$stmtz->execute() or die(mysql_error()."update failed");; 
