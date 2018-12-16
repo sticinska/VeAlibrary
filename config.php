@@ -15,9 +15,8 @@ function tabula($sql_res,$dzest) {
             $first = false;
         }
         echo "<tr>";
-
             foreach ($row as $v) {
-                echo "<td><a href='".$dzest."?=".$row['ID']."$v</td>";
+                echo "<td>$v</td>";
             }
             echo "<td> <form action='dzest".$dzest.".php' autocomplete='no' method='post'>";
             echo "<input type='hidden' name='dzestID' value='".$row["ID"]."'>";
