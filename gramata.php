@@ -44,6 +44,7 @@ if ( isset( $_GET[ "id" ] ) )
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
    $sql_res = $stmt->get_result();
+   echo '<h1>why the fuck is this not working?</h1>';
 
    while($row = mysqli_fetch_assoc($sql_res)){
 
