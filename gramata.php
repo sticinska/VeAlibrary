@@ -25,13 +25,18 @@ if ( isset( $_GET[ "id" ] ) )
             echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
       }
    }else{
-      if($statuss <=> "Pieejama"){
-            echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
-            echo '<div><h5>Izdota lasīšanai: 0</h5></div>';
+      if($eksSkaits == 0){
+            echo '<div>Nav pieejami šīs grāmatas eksemplāri.</div>';
       }else{
-            echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
-            echo '<div><h5>Pieejama: 0</h5></div>';
+            if($statuss <=> "Pieejama"){
+                  echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
+                  echo '<div><h5>Izdota lasīšanai: 0</h5></div>';
+            }else{
+                  echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
+                  echo '<div><h5>Pieejama: 0</h5></div>';
+            }
       }
+      
    }
 
    $sql = $pdos->prepare("SELECT CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors, AutorsID as AID 
