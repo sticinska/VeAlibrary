@@ -190,7 +190,7 @@ echo '<h2>Autori</h2>';
 tabula($AUTORITABULAI,"Autoru");
 
 
-$sql="SELECT GramataaID, Nosaukums FROM gramata;";
+$sql="SELECT GramataaID as ID, Nosaukums FROM gramata;";
 $stmt = mysqli_prepare($conn, $sql);
 $stmt->execute();
 $GRAMATASTABULAI = $stmt->get_result();
