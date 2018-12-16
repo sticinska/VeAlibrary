@@ -138,13 +138,13 @@ $sql="SELECT * FROM valsts;";
         <form action="pievienoKategoriju.php" autocomplete="no" method="post">
         <div><label for="virs">Virskategorija</label><br>
         <input list="virs">
-            <datalist id="virs" name='Virskategorija'>
+            <select id="virs" name='Virskategorija'>
             <?php 
                while ($row = mysqli_fetch_assoc($Kategorijas)) {
                     echo '<option value="'.$row["ID"].'">'.$row["Kategorija"].'</option>';
                 }
                ?>
-            </datalist></div>
+            </select></div>
             <label for="nosaukums">Kategorijas nosaukums</label><br>
             <input type="text" id="nosaukums" placeholer="Kategorijas nosaukums" name="Nosaukums" required><br><br>
             <input type="submit" value="Pievieno Kategoriju">
