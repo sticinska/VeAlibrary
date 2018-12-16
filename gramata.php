@@ -46,7 +46,8 @@ if ( isset( $_GET[ "id" ] ) )
    $stmt->execute();
    $sql_res = $stmt->get_result();
 
-   while($row =  $row = mysqli_fetch_assoc($sql_res)){
+   while($row = mysqli_fetch_assoc($sql_res)){
+
       echo '<div><p>'.$row["Autors"].'</p></div>';
    }
 
