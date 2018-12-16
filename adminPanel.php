@@ -36,6 +36,11 @@ $sql="SELECT * FROM valsts;";
    $stmt->execute();
    $Kategorijas = $stmt->get_result();
 
+   $sql="SELECT * from autoriValstis;";
+   $stmt = mysqli_prepare($conn, $sql);
+   $stmt->execute();
+   $AUTORITABULAI = $stmt->get_result();
+
 
 
 ?>
@@ -178,5 +183,8 @@ $sql="SELECT * FROM valsts;";
 
 
 <?php
+
+
+tabula($AUTORITABULAI);
 include_once("templates/footer.php");
 ?>
