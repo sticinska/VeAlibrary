@@ -39,7 +39,7 @@ if ( isset( $_GET[ "id" ] ) )
       
    }
 
-   $sql="CALL gramatasAutori('$bookID')";
+   $sql="CALL gramatasAutori(".$bookID.")";
    
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
