@@ -36,7 +36,7 @@ $sql="SELECT * FROM valsts;";
    $stmt->execute();
    $Kategorijas = $stmt->get_result();
 
-   $sql="SELECT * from autoriValstis;";
+   $sql="SELECT * from autors;";
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
    $AUTORITABULAI = $stmt->get_result();

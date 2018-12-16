@@ -17,10 +17,11 @@ function tabula($sql_res) {
         echo "<tr>";
             foreach ($row as $v) {
                 echo "<td>$v</td>";
+                echo "<td> <form action='dzestAutoru.php' autocomplete='no' method='post'>";
+                echo "<input type='hidden' value='" + $row["ID"] + "'>";
+                echo "<input type='submit' value='delete'></form></td>";
             }
-            echo "<td> <form action='dzestAutoru.php' autocomplete='no' method='post'>";
-            echo "<input type='hidden' value='" + 
-            echo "<input type='submit' value='delete'></form></td>";
+           
             echo "</tr>".PHP_EOL;
     }
     echo "</table></center>";
@@ -29,7 +30,7 @@ function tabula($sql_res) {
     printf("<br><left>Result set has <b>%d</b> rows. </left>\n", $row_cnt);
     /* close result set */
     mysqli_free_result($sql_res);
-    }
+}
 
     
 $conn = mysqli_connect('10.0.15.134','dbteh','DBteh-2018','library') or die('Nevaru pievienoties datubāzei');
