@@ -192,5 +192,6 @@ tabula($AUTORITABULAI,"Autoru");
 
 echo '<h2>Gramatas</h2>';
 tabula($GRAMATASTABULAI,"Gramatu");
+echo '<h2>sss</h2>';
 include_once("templates/footer.php");
 ?>
