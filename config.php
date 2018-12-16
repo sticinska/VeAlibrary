@@ -9,7 +9,8 @@ function tabula($sql_res) {
             foreach ($row as $k=>$v) {
                 echo "<th>$k</th>";
             }
-            echo "<th> <form action='dzestAutoru.php' autocomplete='no' method='post'><input type='submit' value='delete'></th>";
+            echo "<th> - - - </th>";
+            
             echo "</tr>".PHP_EOL;
             $first = false;
         }
@@ -17,6 +18,9 @@ function tabula($sql_res) {
             foreach ($row as $v) {
                 echo "<td>$v</td>";
             }
+            echo "<td> <form action='dzestAutoru.php' autocomplete='no' method='post'>";
+            echo "<input type='hidden' value='" + 
+            echo "<input type='submit' value='delete'></form></td>";
             echo "</tr>".PHP_EOL;
     }
     echo "</table></center>";
