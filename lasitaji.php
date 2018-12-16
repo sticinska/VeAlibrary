@@ -11,5 +11,5 @@ echo '<h2>Lasitaji </h2>';
 while ($row = mysqli_fetch_assoc($LIETOTAJI)) {
     echo '<a href="lasitajs.php?id='.$row["ID"].'"><h5>"'.$row["Lietotajvards"].'"</h5></a>';
 }
-
+echo '<h2>Lasitadsdsji </h2>';
 ?>
