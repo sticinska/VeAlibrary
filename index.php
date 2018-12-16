@@ -7,10 +7,9 @@ require_once("templates/header.php");
 
 <?php
   $skaits = 10;
-   $sql="call getPedejasGramatas(?)";
+   $sql="SELECT Nosaukums, GramataaID as GID  FROM gramata LIMIT skaits ORDER BY GramataaID desc; ";
 
    $stmt = mysqli_prepare($conn, $sql);
-   mysqli_stmt_bind_param($stmt, "s", $skaits);
    $stmt->execute();
    $Gramatas = array();
    $res = $stmt->get_result();
