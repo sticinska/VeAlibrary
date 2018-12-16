@@ -39,7 +39,10 @@ if ( isset( $_GET[ "id" ] ) )
       
    }
 
-   $sql="CALL gramatasAutori(7)";
+   $sql="SELECT CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors, AutorsID as AID 
+   FROM gramatasAutori 
+   LEFT JOIN autors ON autors.ID = gramatasAutori.AutorsID 
+   WHERE GramataID=7;";
    
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
