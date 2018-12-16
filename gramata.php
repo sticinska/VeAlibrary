@@ -16,7 +16,7 @@ if ( isset( $_GET[ "id" ] ) )
    echo '<div><h5>Apjoms: '.$row["Apjoms"].'</h5></div>';
    echo '<div><h5>ISBN: '.$row["ISBN"].'</h5></div>';
    echo '<div><h5>Izdevuma gads: '.$row["IzdevumaGads"].'</h5></div>';
-   if($sql_res->num_rows==2){
+   if(($sql_res->num_rows)==2){
             
       if($row["Statuss"]=="Pieejama"){
             echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
