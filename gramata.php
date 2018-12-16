@@ -22,11 +22,13 @@ if ( isset( $_GET[ "id" ] ) )
    if($rowcount==2){
       echo '<h1>please</h1>';
       if($statuss=="Pieejama"){
+            echo '<h1>god</h1>';
             echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             //echo '<div><h5>'.$row2["Statuss"].': '.$row2["EksSkaits"].'</h5></div>';
       }
    }else{
       if($statuss=="Pieejama"){
+            echo '<h1>help</h1>';
             echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             echo '<div><h5>Izdota lasīšanai: 0</h5></div>';
       }else{
