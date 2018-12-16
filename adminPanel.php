@@ -49,8 +49,8 @@ $sql="SELECT * FROM valsts;";
             </div>
 
         <div><label for="autors">Grāmatas Autors</label><br>
-        <input list="autors">
             <select id="autors" name='Autors'>
+            <option selected value> -- autors -- </option>
             <?php 
                while ($row = mysqli_fetch_assoc($Autori)) {
                     echo '<option value="'.$row["Autors"].'">'.$row["Autors"].'</option>';
@@ -61,6 +61,7 @@ $sql="SELECT * FROM valsts;";
             <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods"></div>
             <div><label for="valoda">Valoda</label><br>
             <select id="valoda" name='Valoda' required>
+            <option selected value> -- valoda -- </option>
             <?php 
                foreach($Valodas as &$value){
                 echo '<option value="'.$value[0].'">'.$value[1].'</option>';
@@ -69,6 +70,7 @@ $sql="SELECT * FROM valsts;";
 </select></div>
             <div><label for="originalvaloda">Oriģinālvaloda</label><br>
             <select id="originalvaloda" name='Originalvaloda' required>
+            <option selected value> -- oriģinālvaloda -- </option>
             <?php 
                foreach($Valodas as &$value){
                 echo '<option value="'.$value[0].'">'.$value[1].'</option>';
@@ -79,7 +81,7 @@ $sql="SELECT * FROM valsts;";
             <input type="text" id="apjoms" min="1" name="Apjoms" placeholder="Lappušu skaits"></div>
             <div><label for="izdevnieciba">Izdevnieciba</label><br>
             <select id="izdevnieciba" name='Izdevnieciba'>
-            <option selected value> -- izdevnieciba -- </option>
+            <option selected value> -- izdevniecība -- </option>
             <?php 
                while ($row = mysqli_fetch_assoc($Izdevniecibas)) {
                     echo '<option value="'.$row["ID"].'">'.$row["Nosaukums"].'</option>';
@@ -120,8 +122,9 @@ $sql="SELECT * FROM valsts;";
         <h3>Pievieno Gramatas Eksemplaru</h3><br>
         <form action="pievienoEksemplaru.php" autocomplete="no" method="post">
         <div><label for="autors">Grāmata</label><br>
-        <input list="gramata">
+        
             <select id="gramata" required name="gramata">
+            <option selected value> -- grāmata -- </option>
             <?php 
                while ($row = mysqli_fetch_assoc($Gramatas)) {
                     echo '<option value="'.$row["GramataaID"].'">'.$row["Nosaukums"].'</option>';
@@ -137,8 +140,8 @@ $sql="SELECT * FROM valsts;";
         <h3>Pievieno Kategoriju</h3><br>
         <form action="pievienoKategoriju.php" autocomplete="no" method="post">
         <div><label for="virs">Virskategorija</label><br>
-        <input list="virs">
             <select id="virs" name='Virskategorija'>
+            <option selected value> -- Virskategorija -- </option>
             <?php 
                while ($row = mysqli_fetch_assoc($Kategorijas)) {
                     echo '<option value="'.$row["ID"].'">'.$row["Kategorija"].'</option>';
