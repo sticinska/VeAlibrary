@@ -7,6 +7,8 @@ $stmt->bind_param('si', $k, $vk);
 $k = $_POST["Nosaukums"];
 $vk = $_POST["Virskategorija"];
 
+echo '<h1>'.$vk.'</h1>';
+
 $stmt->execute();
         
 $stmt->close();
