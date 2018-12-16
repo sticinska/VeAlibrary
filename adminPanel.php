@@ -50,13 +50,13 @@ $sql="SELECT * FROM valsts;";
 
         <div><label for="autors">Grāmatas Autors</label><br>
         <input list="autors">
-            <datalist id="autors" name='Autors'>
+            <select id="autors" name='Autors'>
             <?php 
                while ($row = mysqli_fetch_assoc($Autori)) {
                     echo '<option value="'.$row["Autors"].'">'.$row["Autors"].'</option>';
                 }
                ?>
-            </datalist></div>
+            </select></div>
             <div><label for="ISBN">ISBN kods</label><br>
             <input type="text" id="ISBN" name="ISBN" placeholder="ISBN kods"></div>
             <div><label for="valoda">Valoda</label><br>
@@ -121,13 +121,13 @@ $sql="SELECT * FROM valsts;";
         <form action="pievienoEksemplaru.php" autocomplete="no" method="post">
         <div><label for="autors">Grāmata</label><br>
         <input list="gramata">
-            <datalist id="gramata" required name="gramata">
+            <select id="gramata" required name="gramata">
             <?php 
                while ($row = mysqli_fetch_assoc($Gramatas)) {
                     echo '<option value="'.$row["GramataaID"].'">'.$row["Nosaukums"].'</option>';
                 }
                ?>
-            </datalist></div>
+            </select></div>
             <label for="svitras">Bibliotēkas svītrkods</label><br>
             <input type="text" id="svitras" placeholer="Bibliotēkas svītrkods" name="bibsvitras" required><br><br>
             <input type="submit" value="Submit">
