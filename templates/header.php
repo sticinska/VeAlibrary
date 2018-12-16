@@ -7,16 +7,17 @@ require_once("config.php");
     <meta charset="UTF-8">
     <title>VeA Bibliotēka</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://vea.venta.lv/css/sp3.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="https://vea.venta.lv/css/mod_forum.css" media="all" />
+    <link rel="alternate" type="application/atom+xml" title="VeA ZD" href="https://vea.venta.lv/Forum/atom/" />
+    <link rel="stylesheet" type="text/css" href="https://vea.venta.lv/css/sp3_rtl.css" media="all" />
     <link rel="stylesheet" type="text/css" media="screen" href="imp/main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://vea.venta.lv/css/sp3.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="https://vea.venta.lv/css/mod_forum.css" media="all" />
-    <link rel="alternate" type="application/atom+xml" title="VeA ZD" href="https://vea.venta.lv/Forum/atom/" />
-    <link rel="stylesheet" type="text/css" href="https://vea.venta.lv/css/sp3_rtl.css" media="all" />
+    
   </head>
 <body>
 
