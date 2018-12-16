@@ -4,9 +4,8 @@ require_once("templates/header.php");
 if ( isset( $_GET[ "id" ] ) )
    $bookID = $_GET["id"];
 
-   $sql="CALL gramataFullInfo(7)";
+   $sql="CALL gramataFullInfo('$bookID')";
    
-
    $stmt = mysqli_prepare($conn, $sql);
    mysqli_stmt_bind_param($stmt, "s", $bookID);
    $stmt->execute();
@@ -21,19 +20,15 @@ if ( isset( $_GET[ "id" ] ) )
    $eksSkaits = $row["EksSkaits"];
    if($rowcount==2){
       $row = mysqli_fetch_array($sql_res);
-      echo '<h1>please'.$statuss.'</h1>';
       if($statuss <=> "Pieejama"){
-            echo '<h1>god</h1>';
             echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
       }
    }else{
       if($statuss <=> "Pieejama"){
-            echo '<h1>help</h1>';
             echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             echo '<div><h5>Izdota lasīšanai: 0</h5></div>';
       }else{
-            echo '<h1>WHAT</h1>';
             echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             echo '<div><h5>Pieejama: 0</h5></div>';
       }
