@@ -185,6 +185,6 @@ $sql="SELECT * FROM valsts;";
 <?php
 
 
-tabula($AUTORITABULAI);
+tabula($AUTORITABULAI,"autoru");
 include_once("templates/footer.php");
 ?>

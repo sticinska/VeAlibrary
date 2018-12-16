@@ -1,6 +1,6 @@
 <?php
     
-function tabula($sql_res) {
+function tabula($sql_res,$dzest) {
     $first = true;
     echo "<center><table class=\"schedule\">";
     while ($row = mysqli_fetch_assoc($sql_res)) {
@@ -19,7 +19,7 @@ function tabula($sql_res) {
                 echo "<td>$v</td>";
                 
             }
-            echo "<td> <form action='dzestAutoru.php' autocomplete='no' method='post'>";
+            echo "<td> <form action='dzest".$dzest.".php' autocomplete='no' method='post'>";
             echo "<input type='hidden' value='".$row["ID"]."'>";
             echo "<input type='submit' value='delete'></form></td>";
             echo "</tr>".PHP_EOL;
