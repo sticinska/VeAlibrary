@@ -129,8 +129,8 @@ $sql="SELECT * FROM valsts;";
                ?>
             </datalist></div>
             <label for="svitras">Bibliotēkas svītrkods</label><br>
-            <input type="text" id="svitras" placeholer="Bibliotēkas svītrkods" name="bibsvitras" required><br>
-            <input type="submit" value="Add post">
+            <input type="text" id="svitras" placeholer="Bibliotēkas svītrkods" name="bibsvitras" required><br><br>
+            <input type="submit" value="Submit">
         </form>
 </div><hr><br><br>
 <div>
