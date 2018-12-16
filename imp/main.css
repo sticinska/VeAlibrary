@@ -70,12 +70,14 @@ background-color: rgb(56, 55, 55);
   margin-bottom: auto;
 }
 
-footer {
+.footer {
   background-color: #555;
   color: white;
-  padding: 15px;
   position: fixed;
+  left: 0;
   bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 #vealogo {

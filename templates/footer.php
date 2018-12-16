@@ -1,6 +1,6 @@
 </main>
-<footer>
+<div class="footer">
 2018
-</footer>
+</div>
 </body>
 </html>
