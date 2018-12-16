@@ -17,11 +17,11 @@ function tabula($sql_res) {
         echo "<tr>";
             foreach ($row as $v) {
                 echo "<td>$v</td>";
-                echo "<td> <form action='dzestAutoru.php' autocomplete='no' method='post'>";
-                echo "<input type='hidden' value='" + $row["ID"] + "'>";
-                echo "<input type='submit' value='delete'></form></td>";
+                
             }
-           
+            echo "<td> <form action='dzestAutoru.php' autocomplete='no' method='post'>";
+            echo "<input type='hidden' value='" + $row["ID"] + "'>";
+            echo "<input type='submit' value='delete'></form></td>";
             echo "</tr>".PHP_EOL;
     }
     echo "</table></center>";
