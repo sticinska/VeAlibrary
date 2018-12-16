@@ -17,18 +17,20 @@ if ( isset( $_GET[ "id" ] ) )
    echo '<div><h5>ISBN: '.$row["ISBN"].'</h5></div>';
    echo '<div><h5>Izdevuma gads: '.$row["IzdevumaGads"].'</h5></div>';
    $rowcount = ($sql_res->num_rows);
+   $statuss = $row["Statuss"];
+   $eksSkaits = $row["EksSkaits"];
    if($rowcount==2){
       echo '<h1>please</h1>';
-      if($row["Statuss"]=="Pieejama"){
-            echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
+      if($statuss=="Pieejama"){
+            echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             //echo '<div><h5>'.$row2["Statuss"].': '.$row2["EksSkaits"].'</h5></div>';
       }
    }else{
-      if($row["Statuss"]=="Pieejama"){
-            echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
+      if($statuss=="Pieejama"){
+            echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             echo '<div><h5>Izdota lasīšanai: 0</h5></div>';
       }else{
-            echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
+            echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             echo '<div><h5>Pieejama: 0</h5></div>';
       }
    }
