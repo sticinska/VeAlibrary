@@ -20,7 +20,7 @@ function tabula($sql_res) {
                 
             }
             echo "<td> <form action='dzestAutoru.php' autocomplete='no' method='post'>";
-            echo "<input type='hidden' value='" + $row["ID"] + "'>";
+            echo "<input type='hidden' value='".$row["ID"]."'>";
             echo "<input type='submit' value='delete'></form></td>";
             echo "</tr>".PHP_EOL;
     }
