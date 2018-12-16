@@ -5,13 +5,33 @@ if ( isset( $_GET[ "id" ] ) )
    $bookID = $_GET["id"];
 
    $sql="CALL gramataFullInfo(7)";
+   
 
    $stmt = mysqli_prepare($conn, $sql);
    mysqli_stmt_bind_param($stmt, "s", $bookID);
    $stmt->execute();
    $sql_res = $stmt->get_result();
-   
-   echo  '<h1>'.($sql_res->num_rows).'</h1>';
+   $row = mysqli_fetch_array($sql_res);
+   echo '<div><h3>"'.$row["Gramata"].'"</h3></div>';
+   echo '<div><h5>Apjoms: '.$row["Apjoms"].'</h5></div>';
+   echo '<div><h5>ISBN: '.$row["ISBN"].'</h5></div>';
+   echo '<div><h5>Izdevuma gads: '.$row["IzdevumaGads"].'</h5></div>'; 
+   $statuss = $row["Statuss"];
+   if($sql_res->num_rows==2){
+      $row2 = mysqli_fetch_array($sql_res);
+      if($statuss=="Pieejama"){
+            echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
+            echo '<div><h5>'.$row2["Statuss"].': '.$row2["EksSkaits"].'</h5></div>';
+      }
+   }else{
+      if($statuss=="Pieejama"){
+            echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
+            echo '<div><h5>Izdota lasīšanai: 0</h5></div>';
+      }else{
+            echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
+            echo '<div><h5>Pieejama: 0</h5></div>';
+      }
+   }
 
    $sql = $pdos->prepare("SELECT CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors, AutorsID as AID 
                           FROM gramatasAutori 
