@@ -1,5 +1,4 @@
 <?php
-function tabula($sql_res) {
     
 function tabula($sql_res) {
     $first = true;
