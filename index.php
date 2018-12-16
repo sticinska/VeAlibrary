@@ -7,28 +7,23 @@ require_once("templates/header.php");
 
 <?php
   $skaits = 10;
-   $sql="SELECT Nosaukums, GramataaID as GID  FROM gramata LIMIT skaits ORDER BY GramataaID desc; ";
-
+  $sql="SELECT Nosaukums, GramataaID as GID  FROM gramata LIMIT skaits ORDER BY GramataaID desc; ";
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
-   $Gramatas = array();
-   $res = $stmt->get_result();
-   while ($row = mysqli_fetch_assoc($res)) {
-    $gr = array($row["GID"], $row["Nosaukums"]);    
-    array_push($Gramatas,$gr);
-   }
+   $Gr = $stmt->get_result();
    
 
-   foreach($Gramatas as &$value) {
-    $gramata = $value[1];
-    $gramatasID = $value[0];
+   while ($row = mysqli_fetch_assoc($Gr)) {
+    echo '<a href="gramata.php?id='.$row["GID"].'"><h5>"'.$row["Nosaukums"].'"</h5></a>';
+   
+}
      
     
      //while($autorsRow = mysqli_fetch_assoc($res)){
        // echo '<a href="autors.php?id=' .$autorsRow["AID"]. '"><h5 class="mt-0 mb-1">'.$autorsRow["Autors"].' </a>';
      //}
      
-     echo '<a href="gramata.php?id='.$gramatasID.'"><h5>"'.$gramata.'"</h5></a>';
+    
     }
 
 ?>
