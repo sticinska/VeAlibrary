@@ -13,5 +13,5 @@ $stmt->execute();
         
 $stmt->close();
 
-header("Location:adminPanel.php"); 
+//header("Location:adminPanel.php"); 
 ?>
