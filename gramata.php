@@ -15,16 +15,15 @@ if ( isset( $_GET[ "id" ] ) )
    echo '<div><h3>"'.$row["Gramata"].'"</h3></div>';
    echo '<div><h5>Apjoms: '.$row["Apjoms"].'</h5></div>';
    echo '<div><h5>ISBN: '.$row["ISBN"].'</h5></div>';
-   echo '<div><h5>Izdevuma gads: '.$row["IzdevumaGads"].'</h5></div>'; 
-   $statuss = $row["Statuss"];
+   echo '<div><h5>Izdevuma gads: '.$row["IzdevumaGads"].'</h5></div>';
    if($sql_res->num_rows==2){
-      $row2 = mysqli_fetch_array($sql_res);
-      if($statuss=="Pieejama"){
+            
+      if($row["Statuss"]=="Pieejama"){
             echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
-            echo '<div><h5>'.$row2["Statuss"].': '.$row2["EksSkaits"].'</h5></div>';
+            //echo '<div><h5>'.$row2["Statuss"].': '.$row2["EksSkaits"].'</h5></div>';
       }
    }else{
-      if($statuss=="Pieejama"){
+      if($row["Statuss"]=="Pieejama"){
             echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
             echo '<div><h5>Izdota lasīšanai: 0</h5></div>';
       }else{
