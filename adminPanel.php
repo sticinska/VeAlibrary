@@ -30,6 +30,7 @@ $sql="SELECT * FROM valsts;";
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
    $Gramatas = $stmt->get_result();
+   $GRAMATASTABULAI = array();
 
    $sql="SELECT DISTINCT ID, Kategorija FROM kategorija;";
    $stmt = mysqli_prepare($conn, $sql);
@@ -132,6 +133,8 @@ $sql="SELECT * FROM valsts;";
             <option selected value> -- grāmata -- </option>
             <?php 
                while ($row = mysqli_fetch_assoc($Gramatas)) {
+                    $val = array($row["GramataaID"], $row["Nosaukums"]);    
+                    array_push($GRAMATASTABULAI,$val);
                     echo '<option value="'.$row["GramataaID"].'">'.$row["Nosaukums"].'</option>';
                 }
                ?>
@@ -184,7 +187,10 @@ $sql="SELECT * FROM valsts;";
 
 <?php
 
-
+echo '<h2>Autori</h2>';
 tabula($AUTORITABULAI,"Autoru");
+
+echo '<h2>Gramatas</h2>';
+tabula($GRAMATASTABULAI,"Gramatu");
 include_once("templates/footer.php");
 ?>
