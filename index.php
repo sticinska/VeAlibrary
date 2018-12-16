@@ -12,17 +12,11 @@ require_once("templates/header.php");
    $stmt = mysqli_prepare($conn, $sql);
    mysqli_stmt_bind_param($stmt, "s", $skaits);
    $stmt->execute();
-   $Gramatas = array();
    $res = $stmt->get_result();
    while ($row = mysqli_fetch_assoc($res)) {
-    $gr = array($row["GID"], $row["Nosaukums"]);    
-    array_push($Gramatas,$gr);
+    echo '<a href="gramata.php?id='.$row["GID"].'">"'.$row["Nosaukums"].'"</h5></a>'; 
    }
 
-   foreach($Gramatas as &$value) {
-    $gramata = $value[1];
-    $gramatasID = $value[0];
-     
 /*
      $sql1="SELECT * FROM autors;";
      $stmt1 = mysqli_prepare($conn, $sql1);
@@ -32,9 +26,8 @@ require_once("templates/header.php");
        // echo '<a href="autors.php?id=' .$autorsRow["AID"]. '"><h5 class="mt-0 mb-1">'.$autorsRow["Autors"].' </a>';
      //}
      
-     echo '<a href="gramata.php?id='.$gramatasID.'">"'.$gramata.'"</h5></a>';
-     echo 'default graamatas apraksts</div></li></div>';
-    }
+     
+    
 
 ?>
     
