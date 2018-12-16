@@ -146,7 +146,7 @@ $sql="SELECT * FROM valsts;";
                ?>
             </datalist></div>
             <label for="nosaukums">Kategorijas nosaukums</label><br>
-            <input type="text" id="nosaukums" placeholer="Kategorijas nosaukums" name="Nosaukums" required><br>
+            <input type="text" id="nosaukums" placeholer="Kategorijas nosaukums" name="Nosaukums" required><br><br>
             <input type="submit" value="Pievieno Kategoriju">
         </form>
         </div><hr><br><br>
@@ -158,7 +158,7 @@ $sql="SELECT * FROM valsts;";
             <label for="nosaukums">Valoda</label><br>
             <input type="text" id="nosaukums" placeholer="Valoda" name="Nosaukums" required></div><br>
             <input type="submit" value="Pievieno Valodu">
-        </form><hr><br><br>
+        </form><hr><br>
 
         <h3>Pievieno Izdevniecibu</h3><br>
         <form action="pievienoIzdevniecibu.php" autocomplete="no" method="post">
