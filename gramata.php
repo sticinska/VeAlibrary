@@ -20,7 +20,7 @@ if ( isset( $_GET[ "id" ] ) )
    $statuss = $row["Statuss"];
    $eksSkaits = $row["EksSkaits"];
    if($rowcount==2){
-      echo '<h1>please</h1>';
+      echo '<h1>please'.$statuss.'</h1>';
       if($statuss=="Pieejama"){
             echo '<h1>god</h1>';
             echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
