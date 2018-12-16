@@ -196,5 +196,13 @@ $stmt->execute();
 $GRAMATASTABULAI = $stmt->get_result();
 echo '<h2>Gramatas</h2>';
 tabula($GRAMATASTABULAI,"Gramatu");
+
+$sql="SELECT PersonasKods as ID, Lietotajvards FROM lasitajs;";
+$stmt = mysqli_prepare($conn, $sql);
+$stmt->execute();
+$LIETOTAJI = $stmt->get_result();
+echo '<h2>Lietotaji</h2>';
+tabula($LIETOTAJI,"Lasitaju");
 include_once("templates/footer.php");
+
 ?>

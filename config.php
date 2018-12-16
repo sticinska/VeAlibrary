@@ -26,9 +26,6 @@ function tabula($sql_res,$dzest) {
     }
     echo "</table></center>";
     
-    $row_cnt = mysqli_num_rows($sql_res);
-    printf("<br><left>Result set has <b>%d</b> rows. </left>\n", $row_cnt);
-    /* close result set */
     mysqli_free_result($sql_res);
 }
 
