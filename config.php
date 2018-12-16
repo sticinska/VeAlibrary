@@ -9,6 +9,7 @@ function tabula($sql_res) {
             foreach ($row as $k=>$v) {
                 echo "<th>$k</th>";
             }
+            echo "<th> <form action='dzestAutoru.php' autocomplete='no' method='post'><input type='submit' value='delete'></th>";
             echo "</tr>".PHP_EOL;
             $first = false;
         }

@@ -25,9 +25,9 @@ require_once("config.php");
         <!--<a class="navbar-brand" href="#"><img id="vealogo" src="https://moodle.venta.lv/moodle/pluginfile.php/1/core_admin/logo/0x150/1538140603/logo-min.png"></a>
     -->
         <li id="navLi"><a href="index.php">SĀKUMS</a></li>
-        <li id="navLi"><a href="gramatas.php">GRĀMATAS</a></li>
+        <!--<li id="navLi"><a href="gramatas.php">GRĀMATAS</a></li>-->
         <!--<li id="navLi"><a href="#">MULTIVIDE</a></li>-->
-        <li id="navLi"><a href="top.php">TOP IZDEVUMI</span></a></li>
+        <li id="navLi"><a href="top.php">TOP IZDEVUMS</span></a></li>
         <li id="navLi"><a href="adminPanel.php">ADMIN</span></a></li>
       </ul>
 
