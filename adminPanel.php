@@ -204,7 +204,7 @@ $LIETOTAJI = $stmt->get_result();
 echo '<h2>Lietotaji</h2>';
 tabula($LIETOTAJI,"Lasitaju");
 
-echo '<br><br><br><br>'
+echo '<br><br><br><br>';
 include_once("templates/footer.php");
 
 ?>
