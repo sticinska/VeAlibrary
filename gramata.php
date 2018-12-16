@@ -20,11 +20,12 @@ if ( isset( $_GET[ "id" ] ) )
    $statuss = $row["Statuss"];
    $eksSkaits = $row["EksSkaits"];
    if($rowcount==2){
+      $row = mysqli_fetch_array($sql_res);
       echo '<h1>please'.$statuss.'</h1>';
       if($statuss <=> "Pieejama"){
             echo '<h1>god</h1>';
             echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
-            //echo '<div><h5>'.$row2["Statuss"].': '.$row2["EksSkaits"].'</h5></div>';
+            echo '<div><h5>'.$row["Statuss"].': '.$row["EksSkaits"].'</h5></div>';
       }
    }else{
       if($statuss <=> "Pieejama"){
