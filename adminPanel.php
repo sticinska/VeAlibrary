@@ -30,7 +30,6 @@ $sql="SELECT * FROM valsts;";
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
    $Gramatas = $stmt->get_result();
-   $GRAMATASTABULAI = array();
 
    $sql="SELECT DISTINCT ID, Kategorija FROM kategorija;";
    $stmt = mysqli_prepare($conn, $sql);
@@ -190,8 +189,12 @@ $sql="SELECT * FROM valsts;";
 echo '<h2>Autori</h2>';
 tabula($AUTORITABULAI,"Autoru");
 
+
+$sql="SELECT GramataaID, Nosaukums FROM gramata;";
+$stmt = mysqli_prepare($conn, $sql);
+$stmt->execute();
+$GRAMATASTABULAI = $stmt->get_result();
 echo '<h2>Gramatas</h2>';
 tabula($GRAMATASTABULAI,"Gramatu");
-echo '<h2>sss</h2>';
 include_once("templates/footer.php");
 ?>
