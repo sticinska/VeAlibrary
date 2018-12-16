@@ -6,7 +6,7 @@ require_once("templates/header.php");
     <ul class="list-unstyled" style="width=auto">
 
 <?php
-  $skaits = 10;
+ 
   $sql="SELECT Nosaukums, GramataaID as GID  FROM gramata LIMIT skaits ORDER BY GramataaID desc; ";
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
@@ -14,9 +14,9 @@ require_once("templates/header.php");
    
 
    while ($row = mysqli_fetch_assoc($Gr)) {
-    echo '<a href="gramata.php?id='.$row["GID"].'"><h5>"'.$row["Nosaukums"].'"</h5></a>';
+        echo '<a href="gramata.php?id='.$row["GID"].'"><h5>"'.$row["Nosaukums"].'"</h5></a>';
    
-}
+    }
      
     
      //while($autorsRow = mysqli_fetch_assoc($res)){
@@ -24,7 +24,7 @@ require_once("templates/header.php");
      //}
      
     
-    }
+    
 
 ?>
     
