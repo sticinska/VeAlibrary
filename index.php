@@ -7,7 +7,7 @@ require_once("templates/header.php");
 
 <?php
  
-  $sql="SELECT Nosaukums, GramataaID as GID  FROM gramata LIMIT 10 ORDER BY GramataaID desc; ";
+  $sql="SELECT Nosaukums, GramataaID as GID  FROM gramata ORDER BY GramataaID desc LIMIT 10 ; ";
    $stmt = mysqli_prepare($conn, $sql);
    $stmt->execute();
    $Gr = $stmt->get_result();
