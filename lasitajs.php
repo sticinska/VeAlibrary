@@ -14,7 +14,7 @@ if ( isset( $_GET[ "id" ] )){
     ON GramatasEksemplars = eksemplars.BiblSvitrkods  
     LEFT JOIN gramata 
     ON eksemplars.Gramata = gramata.ID 
-    WHERE lasitajs='$lasID' ORDER BY Statuss asc";
+    WHERE lasitajs=".$lasID." ORDER BY Statuss asc";
 
     $stmt = mysqli_prepare($conn, $sql);
     /*$stmt->execute();
