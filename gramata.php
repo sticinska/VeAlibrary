@@ -42,7 +42,6 @@ if ( isset( $_GET[ "id" ] ) )
    $sql="CALL gramatasAutori('$bookID')";
    
    $stmt = mysqli_prepare($conn, $sql);
-   mysqli_stmt_bind_param($stmt, "s", $bookID);
    $stmt->execute();
    $sql_res = $stmt->get_result();
 
