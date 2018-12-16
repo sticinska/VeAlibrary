@@ -9,8 +9,6 @@ require_once("config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://vea.venta.lv/css/sp3.css" media="all" />
     <link rel="stylesheet" type="text/css" href="https://vea.venta.lv/css/mod_forum.css" media="all" />
-    <link rel="alternate" type="application/atom+xml" title="VeA ZD" href="https://vea.venta.lv/Forum/atom/" />
-    <link rel="stylesheet" type="text/css" href="https://vea.venta.lv/css/sp3_rtl.css" media="all" />
     <link rel="stylesheet" type="text/css" media="screen" href="imp/main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
