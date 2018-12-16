@@ -23,8 +23,9 @@ require_once("templates/header.php");
     $gramata = $value[1];
     $gramatasID = $value[0];
      
-/*
+
      $sql1="SELECT * FROM autors;";
+     /*
      $stmt1 = mysqli_prepare($conn, $sql1);
      if(!$stmt1->execute())  $stmt1->error;*/
 
@@ -33,7 +34,6 @@ require_once("templates/header.php");
      //}
      
      echo '<a href="gramata.php?id='.$gramatasID.'">"'.$gramata.'"</h5></a>';
-     echo 'default graamatas apraksts</div></li></div>';
     }
 
 ?>
