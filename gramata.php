@@ -32,6 +32,7 @@ if ( isset( $_GET[ "id" ] ) )
             echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             echo '<div><h5>Izdota lasīšanai: 0</h5></div>';
       }else{
+            echo '<h1>WHAT</h1>';
             echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
             echo '<div><h5>Pieejama: 0</h5></div>';
       }
