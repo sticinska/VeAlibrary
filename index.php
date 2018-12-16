@@ -28,10 +28,6 @@ require_once("templates/header.php");
      $stmt1 = mysqli_prepare($conn, $sql1);
      if(!$stmt1->execute())  $stmt1->error;*/
 
-     echo '<div class="media attribution">';
-     echo '<li class="media">';
-     echo '<img class="bookimg" src="imp/img/bookF/tmp.jpg" alt="Generic placeholder image">';
-     echo '<div class="media-body">';
      //while($autorsRow = mysqli_fetch_assoc($res)){
        // echo '<a href="autors.php?id=' .$autorsRow["AID"]. '"><h5 class="mt-0 mb-1">'.$autorsRow["Autors"].' </a>';
      //}
