@@ -29,9 +29,11 @@ if ( isset( $_GET[ "id" ] ) )
             echo '<div>Nav pieejami šīs grāmatas eksemplāri.</div>';
       }else{
             if($statuss <=> "Pieejama"){
+                  echo '<h1>1</h1>';
                   echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
                   echo '<div><h5>Izdota lasīšanai: 0</h5></div>';
             }else{
+                  echo '<h1>2</h1>';
                   echo '<div><h5>'.$statuss.': '.$eksSkaits.'</h5></div>';
                   echo '<div><h5>Pieejama: 0</h5></div>';
             }
