@@ -32,6 +32,8 @@ if ( isset( $_GET[ "id" ] )){
         echo '<div><p>"'.$row["Gramata"].'" | '.$row["Izdota"]. ' | '.$row["Statuss"].'</p></div>';
     }
 
+    echo ' <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+
 }
    
 

@@ -54,5 +54,6 @@ if ( isset( $_GET[ "id" ] ) )
       echo '<div><p>'.$row["Autors"].'</p></div>';
    }
 
-  
+   echo ' <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+
 ?>
