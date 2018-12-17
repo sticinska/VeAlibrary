@@ -30,7 +30,11 @@ if ( isset( $_GET[ "id" ] )){
     $sql_res = $stmt->get_result();
     while ($row = mysqli_fetch_assoc($sql_res)) {
         echo '<div><p>"'.$row["Gramata"].'" | '.$row["Izdota"]. ' | '.$row["Statuss"].'</p></div>';
-        echo '<form><input type="checkbox" name="checkbox'.$row["izdID"].'"><input type="submit" value="Submit"></form>';
+        if($row["Statuss"]<>"Nodota"){
+            echo '<form><input type="checkbox" name="checkbox'.$row["izdID"].'"><input type="submit" value="Submit"></form>';
+        }
+        
+        
     }
 
     echo ' <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
