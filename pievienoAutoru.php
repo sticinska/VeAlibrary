@@ -12,4 +12,6 @@ $stmt->execute();
 printf("%d Row inserted.\n", $stmt->affected_rows);
         
 $stmt->close();
+
+header("Location:lasitaji.php"); 
 ?>

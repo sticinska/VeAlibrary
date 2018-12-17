@@ -32,7 +32,7 @@ if ( isset( $_GET[ "id" ] )){
         echo '<br>';
         echo '<div style="display: inline"><p>"'.$row["Gramata"].'" | '.$row["Izdota"]. ' | '.$row["Statuss"].'</p></div>';
         if($row["Statuss"]<>"Nodota"){
-            echo '<form action="updateIzdevums.php" method="POST" ><input type="checkbox" name="checkbox'.$row["izdID"].'"><input type="submit" value="Submit"></form>';
+            echo '<form action="updateIzdevums.php?id='.$row["izdID"].'" method="POST" ><input type="checkbox" name="checkbox"><input type="submit" value="Submit"></form>';
         }
         
         
