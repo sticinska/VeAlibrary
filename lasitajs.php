@@ -30,9 +30,9 @@ if ( isset( $_GET[ "id" ] )){
     $sql_res = $stmt->get_result();
     while ($row = mysqli_fetch_assoc($sql_res)) {
         echo '<br>';
-        echo '<div><p>"'.$row["Gramata"].'" | '.$row["Izdota"]. ' | '.$row["Statuss"].'</p></div>';
+        echo '<div style="display: inline"><p>"'.$row["Gramata"].'" | '.$row["Izdota"]. ' | '.$row["Statuss"].'</p></div>';
         if($row["Statuss"]<>"Nodota"){
-            echo '<form action="updateIzdevums.php" method="POST" style="display: inline"><input type="checkbox" name="checkbox'.$row["izdID"].'"><input type="submit" value="Submit"></form>';
+            echo '<form action="updateIzdevums.php" method="POST" ><input type="checkbox" name="checkbox'.$row["izdID"].'"><input type="submit" value="Submit"></form>';
         }
         
         
