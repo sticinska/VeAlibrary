@@ -33,6 +33,7 @@ if ( isset( $_GET[ "id" ] )){
         if($row["Statuss"]<>"Nodota"){
             echo '<form action="updateIzdevums.php" method="POST" style="display: inline"><input type="checkbox" name="checkbox'.$row["izdID"].'"><input type="submit" value="Submit"></form>';
         }
+        echo '<br>';
         
         
     }
