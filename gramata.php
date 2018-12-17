@@ -42,12 +42,12 @@ if ( isset( $_GET[ "id" ] ) )
    $sql="SELECT CONCAT(autors.Vards, ' ' , autors.Uzvards) as Autors, AutorsID as AID 
    FROM gramatasAutori 
    LEFT JOIN autors ON autors.ID = gramatasAutori.AutorsID 
-   WHERE GramataID=7;";
+   WHERE GramataID=?;";
    
    $stmt = mysqli_prepare($conn, $sql);
+   mysqli_stmt_bind_param($stmt, "i", $bookID);
    $stmt->execute();
    $sql_res = $stmt->get_result();
-   echo '<h1>why the fuck is this not working?</h1>';
 
    while($row = mysqli_fetch_assoc($sql_res)){
 
