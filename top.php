@@ -2,15 +2,13 @@
 
 require_once("templates/header.php");
 
-$sql="SELECT PersonasKods as ID, Lietotajvards FROM lasitajs;";
+$sql="SELECT mostPopular() as ID;";
 $stmt = mysqli_prepare($conn, $sql);
 $stmt->execute();
-$LIETOTAJI = $stmt->get_result();
-echo '<h2>Lasitaji </h2>';
+$row = mysqli_fetch_assoc($stmt->get_result());
+echo $row["ID"];
 
-while ($row = mysqli_fetch_assoc($LIETOTAJI)) {
-    echo '<a href="lasitajs.php?id='.$row["ID"].'"><h4>"'.$row["Lietotajvards"].'"</h4></a>';
-}
+
 
 echo ' <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
 
