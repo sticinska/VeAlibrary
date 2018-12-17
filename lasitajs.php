@@ -14,14 +14,14 @@ if ( isset( $_GET[ "id" ] )){
     ON GramatasEksemplars = eksemplars.BiblSvitrkods  
     LEFT JOIN gramata 
     ON eksemplars.Gramata = gramata.GramataaID 
-    WHERE lasitajs=180598";
+    WHERE lasitajs=?";
 
     $stmt = mysqli_prepare($conn, $sql);
-    //mysqli_stmt_bind_param($stmt, "i", $lasID);
+    mysqli_stmt_bind_param($stmt, "i", $lasID);
     $stmt->execute();
     $sql_res = $stmt->get_result();
     echo "<h1>get result</h1>";
-    while ($row = mysqli_fetch_assoc($IZDEVUMI)) {
+    while ($row = mysqli_fetch_assoc($sql_res)) {
         echo '<p>"'.$row["Gramata"].'" | '.$row["Izdota"]. ' | '.$row["Statuss"].'</p>';
     }
 
