@@ -10,9 +10,8 @@ if ( isset( $_GET[ "id" ] )){
     $stmt->execute();
     $Autori = $stmt->get_result();
     $row = mysqli_fetch_assoc($Autori);
-    echo '<h2>';
-    echo $row["Lietotajvards"];
-    echo '</h2>';
+    echo '<h2>'.$row["Lietotajvards"].'</h2>';
+
 
 
     
