@@ -4,9 +4,8 @@ require_once("templates/header.php");
 if ( isset( $_GET[ "id" ] )){
     $lasID = $_GET["id"];
 
-    $sql="SELECT Lietotajvards from lasitajs where PersonasKods=?";
-    mysqli_stmt_bind_param($stmt, "i", $lasID);
-    $stmt = mysqli_prepare($conn, $sql);
+    $stmt = $mysqli->prepare("SELECT Lietotajvards from lasitajs where PersonasKods=?");
+    $stmt->bind_param("i", $lasID);
     $stmt->execute();
     $Autori = $stmt->get_result();
     $row = mysqli_fetch_assoc($Autori);
