@@ -13,7 +13,7 @@ if ( isset( $_GET[ "id" ] )){
     LEFT JOIN eksemplars 
     ON GramatasEksemplars = eksemplars.BiblSvitrkods  
     LEFT JOIN gramata 
-    ON eksemplars.Gramata = gramata.ID 
+    ON eksemplars.Gramata = gramata.GramataaID 
     WHERE lasitajs=180598";
 
     $stmt = mysqli_prepare($conn, $sql);
