@@ -31,7 +31,7 @@ if ( isset( $_GET[ "id" ] )){
     while ($row = mysqli_fetch_assoc($sql_res)) {
         echo '<div><p>"'.$row["Gramata"].'" | '.$row["Izdota"]. ' | '.$row["Statuss"].'</p></div>';
         if($row["Statuss"]<>"Nodota"){
-            echo '<form><input type="checkbox" name="checkbox'.$row["izdID"].'"><input type="submit" value="Submit"></form>';
+            echo '<form action="updateIzdevums.php" method="POST" style="display: inline"><input type="checkbox" name="checkbox'.$row["izdID"].'"><input type="submit" value="Submit"></form>';
         }
         
         
