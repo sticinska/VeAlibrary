@@ -9,7 +9,7 @@ if ( isset( $_GET[ "id" ] )){
     $stmt = mysqli_prepare($conn, $sql);
     $stmt->execute();
     $Autori = $stmt->get_result();
-    $row = mysqli_fetch_assoc($sql_res);
+    $row = mysqli_fetch_assoc($Autori);
     echo '<h2>';
     echo $row["Lietotajvards"];
     echo '</h2>';
